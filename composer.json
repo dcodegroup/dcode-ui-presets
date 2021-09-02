@@ -24,14 +24,18 @@
         "psr-4": {
         }
     },
+
     "autoload-dev": {
         "psr-4": {
             "UiPresets\\Tall\\Tests\\": "tests/"
         }
     },
     "extra": {
+        "component": "package",
+        "frameworks": ["Laravel"],
         "laravel": {
             "providers": [
+                "Dcode\\UiPresets\\DcodeServiceProvider"
             ]
         }
     },
