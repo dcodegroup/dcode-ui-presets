@@ -22,6 +22,7 @@
     },
     "autoload": {
         "psr-4": {
+            "Dcode\\UiPresets\\": "src/"
         }
     },
 
