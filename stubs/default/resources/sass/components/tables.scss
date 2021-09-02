@@ -1,0 +1,125 @@
+@use '../base' as *;
+
+table {
+    border-collapse: separate;
+    border-spacing:0;
+    width: 100%;
+    th,
+    td {
+        font-size: 14px;
+        padding: .5rem;
+    }
+    thead {
+        background-color: transparent;
+        border: none;
+        th {
+            color: $text-2;
+            font-weight: 500;
+            text-align: left;
+        }
+        @include media-breakpoint-down('lg') {
+            display: none;
+        }
+    }
+    tbody {
+        background-color: transparent;
+        tr {
+            background-color: transparent;
+            position: relative;
+            td {
+                border-top: 1px solid $table-border;
+                font-weight: 400;
+                margin: 0;
+                &.actions {
+                    width: 30px;
+                }
+            }
+            @include media-breakpoint-down('lg') {
+                display: block;
+                margin-bottom: 1rem;
+                border-bottom: 1px solid $table-border;
+                td {
+                    border-top: none;
+                    border-bottom: none;
+                    border-left: 1px solid $table-border;
+                    border-right: 1px solid $table-border;
+                    display: flex;
+                    position: inherit;
+                    &:first-child {
+                        border-top: 1px solid $table-border;
+                        padding-top: .55rem;
+                    }
+                    &[data-header]:before {
+                        content: attr(data-header);
+                        display: block;
+                        color: $text-2;
+                        font-weight: bold;
+                        margin-right: 1rem;
+                        text-align: left;
+                        width: 50%;
+                    }
+                    &[data-header] > * {
+                        display: block;
+                        margin-top: 0;
+                        padding-left: .5em;
+                        width: 50%;
+                    }
+                    &.actions {
+                        border: none;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: auto;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+    }
+
+    &.striped {
+        tbody {
+            tr {
+                &:nth-child(odd){
+                    td {
+                        background-color: $table-border;
+                    }
+                } 
+            }
+        }
+    }
+
+    &.bg-rows {
+        border-collapse:separate;
+        border-spacing:0 .5rem;
+
+        tbody {
+            background-color: transparent;
+            tr {
+                background-color: map-get($palette, "off-white");
+                position: relative;
+
+                @each $color, $val in $palette {
+                    &.bg-#{"" + $color} {
+                        background-color: $val;
+                    }
+                    &.text-#{"" + $color} {
+                       color: $val;
+                    }
+                }
+                td {
+                    border-top: none;
+                    padding: 0;
+                    @include media-breakpoint-up('lg') {
+                        &:first-of-type {
+                            padding-left: .5rem;
+                        }
+                        &:last-of-type {
+                            padding-right: .5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

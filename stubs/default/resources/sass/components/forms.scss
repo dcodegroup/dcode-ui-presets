@@ -1,0 +1,313 @@
+@use '../base' as *;
+
+@mixin input-common {
+    border: 1px solid map-get($palette, "dark-gray");            
+    border-radius: 4px;
+    padding: .75rem;
+    transition: border-color 1s;
+    width: 100%;
+    &::placeholder {
+        color: $text-3;
+    }
+}
+input {
+    &[type="text"],
+    &[type="email"],
+    &[type="number"],
+    &[type="date"]
+    {
+        @include input-common;
+    }
+}
+label.checkbox,
+label.radio {
+    display: block;
+    position: relative;
+    margin-bottom: 1rem;
+    input{
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        &:hover {
+            cursor: pointer;
+        }
+        &[type='checkbox'] + span,
+        &[type='radio'] + span {
+            display: flex;
+            margin-left: 0;
+        }  
+        + span {
+            position: relative;
+            text-align: left;
+            &:before {
+                content:"\2713"; 
+                color: transparent;
+                background-color: transparent;
+                border: 1px solid map-get($palette, "dark-gray");
+                border-radius: 50%;
+                font-size: 1rem;
+                height: 20px;
+                line-height: 1;
+                margin-right: .5rem;
+                padding: 2px;
+                text-align: center;
+                width: 20px;
+                transition: all .5s;
+            }
+        }
+        &:checked + span:before {
+            color: map-get($palette, "success");
+            border-color: map-get($palette, "success");
+            background-color: map-get($palette, "whitest");
+        }
+    }
+    span {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+    }
+}
+label.checkbox-btn,
+label.radio-btn {
+    display: inline-block;    
+    position: relative;
+    margin-bottom: 1rem;
+    @each $color, $val in $palette {
+        &.bg-#{"" + $color} {
+            input {
+                &:hover {
+                    cursor: pointer;
+                    + span {
+                        background-color: shade($val, 15%);
+                    }
+                }
+                + span {
+                    background-color: $val;
+                }
+            }
+        }
+    }
+    background-color: transparent;
+    input{
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        &:hover {
+            cursor: pointer;
+            + span {
+                background-color: shade(map-get($palette, "medium-gray"), 15%);
+            }
+        }
+
+        + span {
+            background-color: map-get($palette, "medium-gray"); 
+            color: map-get($palette, "blackest"); 
+            display: inline-block;
+            line-height: 1;
+            padding: $button-padding;
+            position: relative;
+            pointer-events: none;
+            text-align: center;
+            transition: color 1s, background-color 1s;
+        }
+
+        &:checked + span {
+            background-color: rgba(map-get($palette, "success"), .15);
+            color: map-get($palette, "success");
+            // border-color: map-get($palette, "success");
+        }
+        &:checked:hover + span {
+            background-color: rgba(map-get($palette, "success"), .25);
+            color: shade(map-get($palette, "success"), .85);
+            // border-color: map-get($palette, "success");
+        }
+    }
+}
+label.checkbox-toggle,
+label.radio-toggle {
+    display: inline-flex;
+    height: 25px;
+    margin: 0 .25rem;
+    position: relative;
+    color: map-get($palette, "dark-gray");
+    transition: color 1s;
+    span {
+        &.label-text {
+            margin-right: 0.75rem;
+            height: 100%;
+            line-height: 1.65;
+        }
+        &.checkbox  {
+            width: 50px;
+            display: inline-block;
+            position: relative;
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                margin: auto;
+            }
+            &::before {
+                top: 0;
+                height: 25px;
+                width: 100%;
+                background-color: transparent;
+                left: 0px;
+                box-sizing: border-box;
+                border: 1px solid map-get($palette, "medium-gray");
+                transition: border-color 0.2s;
+                border-radius: 50px;
+            }
+            &:hover::before {
+                border: 1px solid map-get($palette, "gray");
+            }
+            &::after {
+                content: "";
+                left: 3px;
+                top: 2px;
+                width: 20px;
+                height: 20px;
+                background-color: map-get($palette, "dark-gray");
+                transition: background-color 0.2s, left 0.2s;
+                border-radius: 50%;
+            }
+        }
+    }
+    input[type="checkbox"],
+    input[type="radio"]  {
+        display: none;
+        &:checked {
+            + span.checkbox {
+                &::before {
+                    border-color: map-get($palette, "primary");
+                }
+
+                &::after {
+                    background-color: map-get($palette, "primary");
+                    border-color: map-get($palette, "primary");
+                    left: 27px;
+                }
+            }
+        }
+    }
+}
+.btn-group {
+    display: inline-flex;
+    label.checkbox-btn,
+    label.radio-btn {
+        margin-right: 1px;
+        &:first-of-type {
+             input + span {
+                border-radius: 4px 0 0 4px;
+            }
+        }
+        &:last-of-type {
+            margin-right: 0;
+            input + span {
+                border-radius: 0 4px 4px 0;
+            }
+        }
+    }
+}
+form,
+.form {
+    p {
+        margin-bottom: 1rem;
+        position: relative;
+        input,
+        label,
+        small {
+            display: block;
+        }
+        label,
+        small {
+            transition: color 1s;
+        }
+        &.-form-error {
+            label,
+            small {
+                color: $form-error;
+            }
+            input {
+                border-color: $form-error;
+            }
+        }
+        &.search-input {
+            label {
+                display: none;
+            }
+            button{
+                height: 100%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 40px;
+                @include reset-btn;
+                svg {
+                    width: 20px;
+                }
+            }
+        }  
+    }
+
+    .select-filter-input {
+        display: inline-flex;
+        flex-direction: column;
+        position: relative;
+        p {
+            @include align-center ;
+            background-color: map-get($palette, "light-gray");
+            padding: $button-padding;
+            label {
+                line-height: 1;
+                margin-right: 5px; 
+            }
+            > span {
+                font-weight: 600;
+                line-height: 1;
+                margin-right: 3rem;
+            }
+            button {
+                height: 100%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 40px;
+                @include reset-btn;
+                svg {
+                    transition: transform 1s;
+                    width: 20px;
+                }
+                &.open {
+                    svg {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+        ul {
+            width: 100%;
+            top: 46px;
+            left: 0;
+            @include dropdown;
+            li button {
+                @include reset-btn;
+            }
+            &.open {
+                height: auto;
+                opacity: 1;
+                padding: .25rem 0;
+                // transition: height 1s, opacity 1s;
+            }
+        }
+    } 
+    > footer {
+        @include space-between-center;
+    }
+}

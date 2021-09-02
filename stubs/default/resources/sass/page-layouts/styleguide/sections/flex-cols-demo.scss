@@ -1,0 +1,16 @@
+@use '../../../base' as *;
+@use "../branding" as *;
+
+#styleguide-layout  {
+    .flex-cols {
+        @include flex-cols(lg);
+        > div {
+            background-color: $dcode-turquoise;
+            border: 1px solid #fff;
+            color: #fff;
+            min-height: 100px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+}

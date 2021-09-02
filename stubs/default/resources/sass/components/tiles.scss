@@ -1,0 +1,27 @@
+@use '../base' as *;
+
+.tile {
+    background-color: map-get($palette, 'light-gray');
+    border-radius: 4px;
+    border: 1px solid shade(map-get($palette, 'light-gray'), 15%);
+    margin-bottom: 1px;
+    transition: background-color 1s, border-color 1s, color 1s;
+    @include align-center;
+    .badge + p {
+        margin-left: 5px;
+    }
+    p {
+        font-size: 14px;
+        line-height: 1;
+        margin: 0;
+    }
+    @each $color, $val in $palette {
+        &.bg-#{"" + $color} {
+            border-color: $val;
+            background-color: $val;
+        }
+        &.text-#{"" + $color} {
+           color: $val;
+        }
+    }
+}

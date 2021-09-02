@@ -1,0 +1,48 @@
+$palette: (
+    primary: #1779ba,
+    secondary: #767676,
+    success: #3adb76,
+    warning: #ffae00,
+    danger: #cc4b37,
+    whitest: #ffffff,
+    light-gray: #e6e6e6,
+    medium-gray: #cacaca,
+    dark-gray: #8a8a8a,
+    blackest: #0a0a0a,
+    off-white: #f8f8f8,
+);
+
+$bg-1: map-get($palette, "whitest");
+$bg-2: map-get($palette, "off-white");
+
+$text-0: map-get($palette, "blackest");
+$text-1: map-get($palette, "dark-grey");
+$text-2: map-get($palette, "secondary");
+$text-3: map-get($palette, "medium-gray");
+$text-4: map-get($palette, "light-gray");
+$text-5: map-get($palette, "off-white");
+$text-6: map-get($palette, "white");
+
+$text-faint: #aaa; //not sure about this implementation
+
+$table-bg: map-get($palette, "off-white");
+$table-border: map-get($palette, "light-gray");
+
+$form-error: map-get($palette, "danger");
+
+@function shade($color, $percentage) {
+    @return mix(#000, $color, $percentage);
+}
+
+@function tint($color, $percentage) {
+    @return mix(#fff, $color, $percentage);
+}
+
+@each $color, $val in $palette {
+    .bg-#{"" + $color} {
+        background-color: $val;
+    }
+    .text-#{"" +$color} {
+       color: $val;
+    }
+}

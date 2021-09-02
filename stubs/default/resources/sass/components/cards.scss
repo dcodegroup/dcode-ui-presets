@@ -1,0 +1,43 @@
+@use '../base' as *;
+.card {
+    background-color: map-get($palette, "off-white");
+    border: 1px solid map-get($palette, "off-white");
+    border-radius: 8px;
+    margin-bottom: .5rem;
+    padding: .5rem;
+    transition: border-color 1s;
+    font-size: 13px;
+
+    > header {
+        @include space-between-center;
+        color: $text-faint;
+        margin-bottom: 5px;
+        p, h3 {
+            margin: 0;
+            line-height: 1;
+            font-size: 1rem;
+        }
+        div {
+            @include space-between-center;
+            .badge {
+                margin-right: .5rem;
+            }
+        }
+        nav > ul > li {
+            padding: 0;
+            > button {
+                color: $text-faint;
+                display: inline-block;
+                line-height: 0;
+                font-size: 1.5rem;
+                vertical-align: text-top;
+            }
+        }
+    }
+    &.selected {
+        border-color: map-get($palette, "secondary");
+        > header {
+            color: map-get($palette, "secondary");
+        }
+    }
+}

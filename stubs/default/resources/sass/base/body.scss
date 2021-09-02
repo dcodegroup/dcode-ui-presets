@@ -1,0 +1,14 @@
+@use 'agnostic.scss' as *;
+@use 'palette.scss' as *;
+@use 'mixins.scss' as *;
+
+body {
+    background-color: $bg-1;
+}
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+

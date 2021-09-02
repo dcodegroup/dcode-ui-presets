@@ -1,0 +1,22 @@
+@use '../base' as *;
+
+.alert {
+    border: 1px solid;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    @include space-between-center;
+    > button {
+        @include reset-btn;
+    }
+
+    @each $color, $val in $palette {
+        &.#{"" + $color} {
+            background-color: tint($val, 85%);
+            border-color: $val;
+            color: $val;
+            button {
+                color: $val;  
+            }
+        }
+    }
+}

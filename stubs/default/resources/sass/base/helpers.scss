@@ -1,0 +1,178 @@
+@use 'sass:math';
+@use './palette.scss' as *;
+@use './breakpoints.scss' as *;
+@use './variables.scss' as *;
+
+//Flex helpers
+@mixin flex-cols($breakpoint: xs) {
+    $column: map-get($columns, $breakpoint);
+    @if $column == null {
+      @error 'Column `#{$breakpoint}` not found.';
+    }
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    $cols: map-get($column, columns);
+    $gutter: map-get($column, gutter);
+    @include media-breakpoint-up($breakpoint) {
+        @for $i from 1 through $cols {
+            .#{$breakpoint}-#{$i} {
+                width: math.div($i, $cols) * 100 * 1%;
+                border: none;
+                //remove this after todo is updated
+                margin-left: 0;
+                margin-right: 0;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            // ToDo: The below margin and padding settings are not working properly
+            // .#{$breakpoint}-#{$i}.padd {
+            //     width: calc(#{math.div($i, $cols) * 100 * 1%} - #{$gutter * 2});
+            //     padding-left: $gutter;
+            //     padding-right: $gutter;
+            // }
+            // .#{$breakpoint}-#{$i}.mrg {
+            //     width: calc(#{math.div($i, $cols) * 100 * 1%} - #{$gutter * 2});
+            //     margin-left: $gutter;
+            //     margin-right: $gutter;
+            // }
+            // .#{$breakpoint}-#{$i}.mrg.padd {
+            //     width: calc(#{math.div($i, $cols) * 100 * 1%} - #{$gutter * 4});
+            // }
+        }
+    }
+    &.justify-between {
+        justify-content: space-between;
+    }
+    &.justify-start {
+        justify-content: flex-start;
+    }
+    &.justify-end {
+        justify-content: flex-end;
+    }
+    &.align-center {
+        align-content: center;
+    }
+    &.align-top {
+        align-content: flex-start;
+    }
+    &.align-bottom {
+        align-content: flex-end;
+    }
+    &.no-wrap {
+        flex-wrap: nowrap;
+    }
+}
+
+@mixin align-center {
+    display: flex;
+    align-items: center;
+}
+@mixin space-between {
+    display: flex;
+    justify-content: space-between;
+}
+@mixin space-between-center {
+    @include space-between;
+    align-items: center;
+}
+.align-center {
+    @include align-center;
+}
+.space-between-center {
+    @include space-between-center;
+}
+.flex {
+    display: flex;
+}
+.f-flow {
+    flex-flow: wrap;
+}
+
+//Grid helpers
+@mixin grids($cols: 1, $colGap : 0px,  $rowGap : 0px, $rows: 0) {
+    display: grid;
+    grid-gap: $rowGap $colGap;
+    grid-template-columns: repeat($cols, 1fr);
+
+    @if($rows != 0){
+        grid-template-rows: repeat($rows, 1fr);
+    } @else {
+        grid-template-rows: auto;
+    }
+}
+
+@mixin cols-of($colWidth, $colGap: 2rem, $max: 1fr, $bp: 400px){
+    display: grid;
+    gap: $colGap;
+    grid-template-columns: repeat(auto-fit, minmax($colWidth, $max));
+    > * {
+        max-width: 100%;
+    }
+    @media (max-width: #{$bp}) {
+        grid-template-columns: repeat(auto-fit, minmax(100%, $max));
+    }
+}
+
+@for $i from 1 through 20 {
+    .cols-of-#{$i * 50} {
+        @include cols-of(#{$i * 50}px, 2rem, 1fr, #{$i * 75}px);
+        &.-no-max {
+            grid-template-columns: repeat(auto-fit, #{$i * 50}px);
+        }
+    }
+}
+
+@mixin reset-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    outline: none;
+    padding: 0;
+}
+
+@mixin reset-ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin dropdown {
+    @include reset-ul;
+    background-color: map-get($palette, "off-white");
+    border-radius: 4px;
+    box-shadow: 0px 0px 12px -4px #000000;
+    height: 0px;
+    min-width: 80px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    transition: border-color 1s, opacity 1s;
+    z-index: 1;
+
+    &.right {
+        right: 0;
+    }
+
+    &.left {
+        left: 0;
+    }
+
+    li {
+        font-size: 14px;
+        line-height: 1;
+        margin: 0;        
+        a, button {        
+            display: inline-block;
+            padding: 0.25rem .5rem;
+            text-decoration: none;    
+            transition: color 1s, background-color 1s;
+            width: 100%;
+            &:hover {
+                color: map-get($palette, "off-white");
+                background-color: map-get($palette, "dark-gray");
+            }
+        }
+    }
+}

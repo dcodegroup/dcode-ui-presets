@@ -1,0 +1,61 @@
+@use '../../../base/' as *;
+@forward './show.scss';
+
+#demo-pages > #app{
+
+    > header {
+        padding: 1rem 0;
+        > div {
+            margin: auto;
+            max-width: $body-max-width;
+            @include space-between-center;
+            @include media-breakpoint-down('xl') {
+                padding: 0 1rem;
+            }
+            h1 {
+                margin:0;
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+    > main {
+        background-color: map-get($palette, "light-gray");
+        min-height: 100vh;
+        padding: 1rem 0;
+          > div {
+            margin: auto;
+            max-width: $body-max-width;
+            @include media-breakpoint-down('xl') {
+                padding: 0 1rem;
+            }
+            header.refine {
+                @include space-between-center;
+                margin-bottom: 2rem;
+                .form  {
+                    @include space-between-center;
+                    > * {
+                        margin-right: .5rem;
+                    }
+
+                    .checkbox-btn,
+                    p {
+                        margin-bottom: 0;
+                    }
+                    &:first-of-type {
+                        > div {
+                            margin-right: 2rem;
+                        }
+                    }
+                  
+                    .select-filter-input p {
+                        background-color: map-get($palette, "whitest");
+                    }
+                }
+            }
+
+
+        }
+    }
+}

@@ -1,0 +1,26 @@
+$button-padding: .75rem 1rem;
+
+$body-max-width: 1400px;
+
+
+/// The number of grid columns.
+///
+/// @group tokens
+/// @type Map
+/// 
+$columns: (
+  xs: (
+    columns: 7,
+    gutter: 1rem,
+  ),
+
+  sm: (
+    columns: 2,
+    gutter: 1rem,
+  ),
+
+  lg: (
+    columns: 12,
+    gutter: 1rem,
+  )
+) !default;

@@ -1,0 +1,27 @@
+@use '../base' as *;
+
+.tag {
+    background-color: map-get($palette, 'light-gray');
+    border-radius: 4px;
+    border: 1px solid map-get($palette, 'light-gray');
+    display: inline-block;
+    font-size: 14px;
+    margin: 0;
+    padding: .15rem .5rem;
+    transition: background-color 1s, color 1s;
+   
+    @each $color, $val in $palette {
+        &.bg-#{"" + $color} {
+            border-color: $val;
+            background-color: $val;
+        }
+        &.text-#{"" + $color} {
+           color: $val;
+        }
+        &.hollow-#{"" + $color} {
+            background-color: transparent;
+            border-color: $val;
+            color: $val;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+@use '../../../base' as *;
+
+.colour-block {
+    border: 1px solid map-get($palette, "dark-grey");
+    padding: 1rem;
+    > div {
+        min-height: 100px;
+        margin-bottom: 1rem;
+    }
+}
