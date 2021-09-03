@@ -2,7 +2,7 @@
 
 .tile {
     background-color: map-get($palette, 'light-gray');
-    border-radius: 4px;
+    border-radius: $button-border-radius;
     border: 1px solid shade(map-get($palette, 'light-gray'), 15%);
     margin-bottom: 1px;
     transition: background-color 1s, border-color 1s, color 1s;

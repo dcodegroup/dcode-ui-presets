@@ -107,6 +107,7 @@ label.radio-btn {
 
         + span {
             background-color: map-get($palette, "medium-gray"); 
+            border-radius: $button-border-radius;
             color: map-get($palette, "blackest"); 
             display: inline-block;
             line-height: 1;
@@ -263,6 +264,7 @@ form,
         p {
             @include align-center ;
             background-color: map-get($palette, "light-gray");
+            border-radius: $button-border-radius;
             padding: $button-padding;
             label {
                 line-height: 1;

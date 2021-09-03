@@ -1,4 +1,5 @@
 @use "./palette.scss" as *;
+@use '../../../base' as *;
 
 @font-face {
     font-family: "Noe Display";
@@ -21,10 +22,31 @@
             font-family: "Noe Display", Georgia, Cambria, "Times New Roman", Times, serif;
         }
     }
+    h1 {
+        @include h1(true);
+    }
+    h2 {
+        @include h2(true);
+    }
+    h3 {
+        @include h3(true);
+    }
+    h4 {
+        @include h4(true);
+    }
+    h5 {
+        @include h5(true);
+    }
+    h6 {
+        @include h6(true);
+    }
+
     p, li, a, button {
         &:not(.demo p, .demo li, .demo a, .demo button) {
             color: $dcode-navy;            
             font-family: "Maison Neue Light", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
         }
     }
 }

@@ -19,26 +19,16 @@
             .#{$breakpoint}-#{$i} {
                 width: math.div($i, $cols) * 100 * 1%;
                 border: none;
-                //remove this after todo is updated
-                margin-left: 0;
-                margin-right: 0;
-                padding-left: 0;
-                padding-right: 0;
             }
-            // ToDo: The below margin and padding settings are not working properly
-            // .#{$breakpoint}-#{$i}.padd {
-            //     width: calc(#{math.div($i, $cols) * 100 * 1%} - #{$gutter * 2});
-            //     padding-left: $gutter;
-            //     padding-right: $gutter;
-            // }
-            // .#{$breakpoint}-#{$i}.mrg {
-            //     width: calc(#{math.div($i, $cols) * 100 * 1%} - #{$gutter * 2});
-            //     margin-left: $gutter;
-            //     margin-right: $gutter;
-            // }
-            // .#{$breakpoint}-#{$i}.mrg.padd {
-            //     width: calc(#{math.div($i, $cols) * 100 * 1%} - #{$gutter * 4});
-            // }
+            .#{$breakpoint}-#{$i}.padd {
+                padding-left: #{$gutter}px;
+                padding-right: #{$gutter}px;
+            }
+            .#{$breakpoint}-#{$i}.mrg {
+                margin-left: #{$gutter}px;
+                margin-right: #{$gutter}px;
+                width: calc((#{math.div($i, $cols) * 100 * 1%}) - #{$gutter * 2}px);
+            }
         }
     }
     &.justify-between {
@@ -138,11 +128,15 @@
     list-style: none;
 }
 
+@mixin box-shadow {
+    box-shadow: 0px 0px 6px -4px map-get($palette, "blackest");
+}
+
 @mixin dropdown {
     @include reset-ul;
     background-color: map-get($palette, "off-white");
     border-radius: 4px;
-    box-shadow: 0px 0px 12px -4px #000000;
+    @include box-shadow;
     height: 0px;
     min-width: 80px;
     opacity: 0;
@@ -175,4 +169,13 @@
             }
         }
     }
+}
+
+@mixin hrs($borderColor: $text-0){
+    border: 0;
+    border-bottom: 1px solid $borderColor;
+}
+
+hr {
+  @include hrs;
 }
