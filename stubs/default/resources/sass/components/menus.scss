@@ -9,7 +9,8 @@ nav > ul {
         padding: .5rem;
         position: relative;
         margin: 0;
-        > a {
+        > a,
+        > button {
             text-decoration: none;    
             &:hover {
                 text-decoration: underline;

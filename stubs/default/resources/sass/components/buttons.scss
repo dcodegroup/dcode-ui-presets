@@ -2,6 +2,7 @@
 
 @mixin button-base($padd: 1rem) {
     border: none;
+    border-radius: $button-border-radius;
     cursor: pointer;
     display: inline-block;
     line-height: 1;

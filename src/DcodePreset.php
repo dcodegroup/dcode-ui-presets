@@ -28,7 +28,6 @@ class DcodePreset extends Preset
         static::updatePackages();
 
         $filesystem = new Filesystem();
-        $filesystem->deleteDirectory(resource_path('css'));
         $filesystem->deleteDirectory(resource_path('sass'));
         $filesystem->deleteDirectory(resource_path('js'));
 

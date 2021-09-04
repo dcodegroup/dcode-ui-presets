@@ -1,26 +1,23 @@
+$body-max-width: 1400px;
+$button-border-radius: 4px;
 $button-padding: .75rem 1rem;
 
-$body-max-width: 1400px;
-
-
-/// The number of grid columns.
+/// The number of columns in a flex-col and gutter size (converted to pixel value).
 ///
 /// @group tokens
 /// @type Map
 /// 
 $columns: (
   xs: (
-    columns: 7,
-    gutter: 1rem,
-  ),
-
-  sm: (
     columns: 2,
-    gutter: 1rem,
+    gutter: 16,
   ),
-
+  sm: (
+    columns: 6,
+    gutter: 12,
+  ),
   lg: (
     columns: 12,
-    gutter: 1rem,
+    gutter: 8,
   )
 ) !default;

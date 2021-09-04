@@ -2,7 +2,7 @@
 
 .tag {
     background-color: map-get($palette, 'light-gray');
-    border-radius: 4px;
+    border-radius: $button-border-radius;
     border: 1px solid map-get($palette, 'light-gray');
     display: inline-block;
     font-size: 14px;

@@ -112,7 +112,7 @@
         font-weight: 500;
     }
 }
-@mixin a {
+@mixin states {
     &, &:link, &:visited {
         color: $text-2;
         transition: color 0.2s linear;
@@ -155,6 +155,7 @@ h6 {
         color: $text-2;
     }
 }
-a {
-    @include a;
+a,
+button {
+    @include states;
 }
