@@ -1,5 +1,7 @@
 @use '../base/agnostic.scss' as *;
 @use '../base/palette.scss' as *;
+@use '../base/variables.scss' as *;
+
 
 @mixin body-font-regular {
     font-family: 'graphik', sans-serif;
@@ -16,7 +18,6 @@
 @mixin heading-font-bold {
     @include body-font-bold;
 }
-
 
 @mixin font-color {
     color: $text-0;

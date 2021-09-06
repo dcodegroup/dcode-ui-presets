@@ -12,10 +12,10 @@
         <h3>HTML Demo</h3>
         <div class="demo">
             <form action="#" method="post">
-                <p>
+                <div>
                     <label for="start_date">Start Date</label>
                     <input type="date" id="start_date" />
-                </p>
+                </div>
             </form>
         </div>
         <hr>

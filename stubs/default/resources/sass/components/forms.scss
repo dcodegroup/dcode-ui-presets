@@ -1,13 +1,13 @@
 @use '../base' as *;
 
 @mixin input-common {
-    border: 1px solid map-get($palette, "dark-gray");            
+    border: 1px solid map-get($palette, "medium-gray");            
     border-radius: 4px;
     padding: .75rem;
     transition: border-color 1s;
     width: 100%;
     &::placeholder {
-        color: $text-3;
+        color: $text-2;
     }
 }
 input {
@@ -101,10 +101,9 @@ label.radio-btn {
         &:hover {
             cursor: pointer;
             + span {
-                background-color: shade(map-get($palette, "medium-gray"), 15%);
+                background-color: rgba(map-get($palette, "blackest"), .85);
             }
         }
-
         + span {
             background-color: map-get($palette, "medium-gray"); 
             border-radius: $button-border-radius;
@@ -117,15 +116,14 @@ label.radio-btn {
             text-align: center;
             transition: color 1s, background-color 1s;
         }
-
         &:checked + span {
-            background-color: rgba(map-get($palette, "success"), .15);
-            color: map-get($palette, "success");
+            background-color: map-get($palette, "blackest");
+            color: $text-6;
             // border-color: map-get($palette, "success");
         }
         &:checked:hover + span {
-            background-color: rgba(map-get($palette, "success"), .25);
-            color: shade(map-get($palette, "success"), .85);
+            background-color: rgba(map-get($palette, "blackest"), .85);
+            color: shade($text-6, .85);
             // border-color: map-get($palette, "success");
         }
     }
@@ -218,7 +216,7 @@ label.radio-toggle {
 }
 form,
 .form {
-    p {
+    > div {
         margin-bottom: 1rem;
         position: relative;
         input,
@@ -229,6 +227,9 @@ form,
         label,
         small {
             transition: color 1s;
+        }
+        small {
+            margin-top: .25rem;
         }
         &.-form-error {
             label,
@@ -251,7 +252,7 @@ form,
                 width: 40px;
                 @include reset-btn;
                 svg {
-                    width: 20px;
+                    width: 10px;
                 }
             }
         }  
@@ -261,7 +262,7 @@ form,
         display: inline-flex;
         flex-direction: column;
         position: relative;
-        p {
+        > div {
             @include align-center ;
             background-color: map-get($palette, "light-gray");
             border-radius: $button-border-radius;
@@ -284,7 +285,7 @@ form,
                 @include reset-btn;
                 svg {
                     transition: transform 1s;
-                    width: 20px;
+                    width: 10px;
                 }
                 &.open {
                     svg {
