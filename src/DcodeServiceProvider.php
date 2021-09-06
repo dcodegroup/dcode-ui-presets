@@ -15,7 +15,7 @@ class DcodeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        UiCommand::macro('dpres', function ($command) {
+        UiCommand::macro('dcode-preset-ui', function ($command) {
             DcodePreset::install();
             $command->info('Dcode preset scaffolding installed successfully.');
 
