@@ -1,6 +1,7 @@
 @use '../base' as *;
 
 
+menu > ul,
 nav > ul {
     display: flex;
     @include reset-ul;
@@ -11,9 +12,18 @@ nav > ul {
         margin: 0;
         > a,
         > button {
-            text-decoration: none;    
+            // color: map-get($palette, "teal");
+            @include heading-font-bold;
+            line-height: 1;
+            text-decoration: none; 
+            transition: color 1s;  
+            font-size: 14px; 
             &:hover {
                 text-decoration: underline;
+                color: map-get($palette, "secondary");
+            }
+            &.active {
+                color: map-get($palette, "secondary");
             }
         }
         button {
@@ -47,4 +57,9 @@ nav > ul {
             }
         }
     }
+}
+
+menu { // used for ellipsis menus
+    @include reset-ul; 
+    height: auto;
 }

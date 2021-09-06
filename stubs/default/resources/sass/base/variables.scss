@@ -1,6 +1,9 @@
 $body-max-width: 1400px;
 $button-border-radius: 4px;
 $button-padding: .75rem 1rem;
+$inputs: '[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], select, textarea';
+$text-els: 'h1, h2, h3, h4, h5, p, li, td, th';
+$p-els: 'p, li, small';
 
 /// The number of columns in a flex-col and gutter size (converted to pixel value).
 ///

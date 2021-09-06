@@ -7,9 +7,8 @@
     ])
     <div class="content">
         <h3>Generic Menus</h3>
-        <p>All <code>ul</code> element contained by a <code>nav</code> element will have the generic menu styles applied to it.</p>
-        <p>Currently the generic menu supports sub menu items, not sub subs or deeper nestings.</p>
-        <p>Top level menus with sub menus which are not navigation links should be <code>button</code> elements rather than <code>a</code> tags which link to nothing.
+        <p>All <code>ul</code> elements contained within a <code>nav</code> or <code>menu</code> element will have the menu styles applied to it. Currently the generic menu supports sub menu items, not sub subs or deeper nestings.</p>
+        <p>Top level menus with sub menus which are not navigation links should be <code>button</code> elements rather than <code>a</code> tags which link to nothing. Menus which are not part of the main navigation like ellipsis menus, should use the <code>menu</code> element rather than the <code>nav</code> element.</p>   
         <p>There is no JS applied to the <code>button</code> menu items at this stage.</p>
         <hr>
         <h3>HTML Demo</h3>
@@ -53,7 +52,6 @@
         <hr>
         <h3>Dropdown Menu Helpers</h3>
         <p>Dropdown <code>ul</code> element can include a <code>.left</code> or <code>.right</code> class to absolutely position the dropdown left or right.</p>
-
         <hr>
         <h3>Code Example</h3>
         <div class="demo">

@@ -8,30 +8,30 @@
     <div class="content">
         <h3>Generic Forms</h3>
         <p>Forms should not have classes or styles applied to them and should be kept agnostic.</p>
-        <p><code>&lt;p&gt;</code> tags should wrap a label and input as a container.</p>
+        <p><code>&lt;div&gt;</code> tags should wrap a label and input as a container.</p>
         <p>Labels should not wrap inputs and a for attribute needs to be added to the label and the associated id added to the input.</p>
         <p>The only exception for this rule is for the checkbox and radio input elements. Those inputs can have a <code>label</code> container with a class of <code>.checkbox</code> or <code>.radio</code> to provide the custom styles to the associated element.</p>
         <hr>
         <h3>HTML Demo</h3>
         <div class="demo">
             <form action="#" method="post">
-                <p>
+                <div>
                     <label for="name">Enter your name: </label>
                     <input type="text" name="name" id="name" required placeholder="Add you name here.">
                     <small>The name field is required.</small>
-                </p>
-                <p>
+                </div>
+                <div>
                     <label for="email">Enter your email: </label>
                     <input type="email" name="email" id="email" required placeholder="Add you email here."
                     >
                     <small>The email field is required.</small>
-                </p>
+                </div>
                 <label for="mail-me" class="checkbox">
                     <input type="checkbox" id="mail-me" />
                     <span>Include marketing</span>
                 </label>
                 <footer>
-                    <input type="submit" value="Sign up!" class="button -success">
+                    <input type="submit" value="Sign up!" class="button success">
                     <a href="#" class="button">Cancel</a>
                 </footer>
             </form>
@@ -42,23 +42,23 @@
             <pre>
                 <code>
                     {{ " <form action=\"#\" method=\"post\">
-                        <p>
+                        <div>
                             <label for=\"name\">Enter your name: </label>
                             <input type=\"text\" name=\"name\" id=\"name\" required placeholder=\"Add you name here.\">
                             <small>The name field is required.</small>
-                        </p>
-                        <p>
+                        </div>
+                        <div>
                             <label for=\"email\">Enter your email: </label>
                             <input type=\"email\" name=\"email\" id=\"email\" required placeholder=\"Add you email here.\"
                             >
                             <small>The email field is required.</small>
-                        </p>
+                        </div>
                         <label for=\"mail-me\" class=\"checkbox\">
                             <input type=\"checkbox\" id=\"mail-me\" />
                             <span>Include marketing</span>
                         </label>
                         <footer>
-                            <input type=\"submit\" value=\"Sign up!\" class=\"button -success\">
+                            <input type=\"submit\" value=\"Sign up!\" class=\"button success\">
                             <a href=\"#\" class=\"button\">Cancel</a>
                         </footer>
                     </form>" }}
@@ -80,17 +80,17 @@
                 <button>&#9747;</button>
             </header>
             <form action="#" method="post">
-                <p class="-form-error">
+                <div class="-form-error">
                     <label for="name">Enter your name: </label>
                     <input type="text" name="name" id="name" required placeholder="Add you name here.">
                     <small>The name field is required.</small>
-                </p>
-                <p>
+                </div>
+                <div>
                     <label for="email">Enter your email: </label>
                     <input type="email" name="email" id="email" required placeholder="Add you email here."
                     >
                     <small>The email field is required.</small>
-                </p>
+                </div>
                 <label for="mail-me" class="checkbox">
                     <input type="checkbox" id="mail-me" />
                     <span>Include marketing</span>
