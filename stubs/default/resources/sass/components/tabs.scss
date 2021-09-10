@@ -1,4 +1,5 @@
 @use '../base' as *;
+@use '../settings/palette.scss' as *;
 
 nav.tabs {
     ul {

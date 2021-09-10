@@ -1,10 +1,9 @@
-// ToDo: Needs Window pall to trigger the click off event
 
 export default class {
     constructor(el){
         this.selectFilterContainer = el;
-        this.selectFilterBtn = this.selectFilterContainer.querySelector("p > button");
-        this.selectFilterText = this.selectFilterContainer.querySelector("p > span");
+        this.selectFilterBtn = this.selectFilterContainer.querySelector("div > button");
+        this.selectFilterText = this.selectFilterContainer.querySelector("div > span");
         this.selectFilterMenu = this.selectFilterContainer.querySelector("ul");
         this.selectFilterMenuButtons = Array.from(this.selectFilterMenu.querySelectorAll('li > button'));
         this.menuOpen = false;

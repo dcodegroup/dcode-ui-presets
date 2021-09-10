@@ -1,4 +1,5 @@
 @use '../../../base' as *;
+@use '../../../settings/palette.scss' as *;
 
 .colour-block {
     border: 1px solid map-get($palette, "dark-grey");

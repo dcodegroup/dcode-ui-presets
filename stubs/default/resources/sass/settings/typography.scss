@@ -1,7 +1,13 @@
-@use '../base/agnostic.scss' as *;
-@use '../base/palette.scss' as *;
-@use '../base/variables.scss' as *;
+// // This file should be added to a settings dir the mixins should be placed in base
+@use '../base/' as *;
+@use './palette.scss' as *;
+@use './variables.scss' as *;
+@use './fonts/inter.scss' as *;
 
+// ToDo: Add FontAwesome to preset build
+// $fa-font-path: "/fonts/fontawesome-pro";
+// @import '../../../node_modules/@fortawesome/fontawesome-pro/scss/fontawesome';
+// @import '../../../node_modules/@fortawesome/fontawesome-pro/scss/light';
 
 @mixin body-font-regular {
     font-family: 'graphik', sans-serif;
@@ -113,15 +119,6 @@
         font-weight: 500;
     }
 }
-@mixin states {
-    &, &:link, &:visited {
-        color: $text-2;
-        transition: color 0.2s linear;
-    }
-    &:hover, &:active {
-        color: $text-1;
-    }
-}
 
 body {
     @include p;
@@ -158,5 +155,5 @@ h6 {
 }
 a,
 button {
-    @include states;
+    @include states($text-2, $text-1);
 }

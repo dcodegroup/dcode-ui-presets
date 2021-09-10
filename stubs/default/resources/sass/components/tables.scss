@@ -1,4 +1,6 @@
 @use '../base' as *;
+@use '../settings/palette.scss' as *;
+@use '../settings/variables.scss' as *;
 
 table {
     border-collapse: separate;
@@ -8,6 +10,7 @@ table {
     td {
         font-size: 14px;
         padding: .5rem;
+        @include text-alignments;
     }
     thead {
         background-color: transparent;
@@ -32,6 +35,7 @@ table {
                 margin: 0;
                 &.actions {
                     width: 30px;
+                    @include ellipsis;
                 }
             }
             @include media-breakpoint-down('lg') {

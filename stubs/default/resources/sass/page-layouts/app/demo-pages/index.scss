@@ -1,8 +1,14 @@
 @use '../../../base/' as *;
+@use '../../../settings/variables.scss' as *;
+@use '../../../settings/palette.scss' as *;
 @forward './show.scss';
+@forward './styleguide-reference.scss';
 
-#demo-pages > #app{
+html {
+    scroll-behavior: smooth;
+}
 
+#demo-pages #app{
     > header {
         padding: 1rem 0;
         > div {
@@ -24,7 +30,7 @@
         background-color: map-get($palette, "light-gray");
         min-height: 100vh;
         padding: 1rem 0;
-          > div {
+        > div {
             margin: auto;
             max-width: $body-max-width;
             @include media-breakpoint-down('xl') {
@@ -48,14 +54,12 @@
                             margin-right: 2rem;
                         }
                     }
-                  
+                
                     .select-filter-input p {
                         background-color: map-get($palette, "whitest");
                     }
                 }
             }
-
-
         }
     }
 }
