@@ -1,4 +1,6 @@
 @use '../base' as *;
+@use '../settings/palette.scss' as *;
+@use '../settings/variables.scss' as *;
 
 @mixin input-common {
     border: 1px solid map-get($palette, "medium-gray");            
@@ -201,6 +203,9 @@ label.radio-toggle {
     label.checkbox-btn,
     label.radio-btn {
         margin-right: 1px;
+        input + span {
+            border-radius:0;
+        };
         &:first-of-type {
              input + span {
                 border-radius: 4px 0 0 4px;

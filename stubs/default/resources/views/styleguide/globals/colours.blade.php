@@ -13,8 +13,7 @@
         and danger colours are used to give more context to UI elements and actions.</p>
     <hr>
     <div class="demo">
-
-        <div class="cols-of-150 ">
+        <div class="cols-of-150">
             <div class="colour-block">
                 <div class="bg-primary"></div>
                 <p class="text-primary">Primary</p>

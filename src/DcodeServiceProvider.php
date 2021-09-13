@@ -28,5 +28,11 @@ class DcodeServiceProvider extends ServiceProvider
 
         Paginator::defaultView('pagination::default');
         Paginator::defaultSimpleView('pagination::simple-default');
+
+        UiCommand::macro('dcode-preset-sass', function ($command) {
+            DcodePreset::updateSass();
+            $command->info('Dcode preset Sass base and components directories have been updated.');
+            $command->comment('Run "npm run dev" to compile your updated Sass assets.');
+        });
     }
 }

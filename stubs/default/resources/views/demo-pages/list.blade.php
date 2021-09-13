@@ -37,7 +37,7 @@
                     <span class="tag bg-success">Job Status</span>
                 </td>
                 <td class="actions"> 
-                    <nav>
+                    <menu>
                         <ul>
                             <li>
                                 <button>...</button>
@@ -54,7 +54,7 @@
                                 </ul>
                             </li> 
                         </ul>
-                    </nav>   
+                    </menu>   
                 </td>
               </tr>
               @endfor

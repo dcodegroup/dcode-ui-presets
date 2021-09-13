@@ -1,117 +1,5 @@
-@use 'sass:math';
-@use './palette.scss' as *;
-@use './breakpoints.scss' as *;
-@use './variables.scss' as *;
 
-//Flex helpers
-@mixin flex-cols($breakpoint: xs) {
-    $column: map-get($columns, $breakpoint);
-    @if $column == null {
-      @error 'Column `#{$breakpoint}` not found.';
-    }
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    $cols: map-get($column, columns);
-    $gutter: map-get($column, gutter);
-    @include media-breakpoint-up($breakpoint) {
-        @for $i from 1 through $cols {
-            .#{$breakpoint}-#{$i} {
-                width: math.div($i, $cols) * 100 * 1%;
-                border: none;
-            }
-            .#{$breakpoint}-#{$i}.padd {
-                padding-left: #{$gutter}px;
-                padding-right: #{$gutter}px;
-            }
-            .#{$breakpoint}-#{$i}.mrg {
-                margin-left: #{$gutter}px;
-                margin-right: #{$gutter}px;
-                width: calc((#{math.div($i, $cols) * 100 * 1%}) - #{$gutter * 2}px);
-            }
-        }
-    }
-    &.justify-between {
-        justify-content: space-between;
-    }
-    &.justify-start {
-        justify-content: flex-start;
-    }
-    &.justify-end {
-        justify-content: flex-end;
-    }
-    &.align-center {
-        align-content: center;
-    }
-    &.align-top {
-        align-content: flex-start;
-    }
-    &.align-bottom {
-        align-content: flex-end;
-    }
-    &.no-wrap {
-        flex-wrap: nowrap;
-    }
-}
-
-@mixin align-center {
-    display: flex;
-    align-items: center;
-}
-@mixin space-between {
-    display: flex;
-    justify-content: space-between;
-}
-@mixin space-between-center {
-    @include space-between;
-    align-items: center;
-}
-.align-center {
-    @include align-center;
-}
-.space-between-center {
-    @include space-between-center;
-}
-.flex {
-    display: flex;
-}
-.f-flow {
-    flex-flow: wrap;
-}
-
-//Grid helpers
-@mixin grids($cols: 1, $colGap : 0px,  $rowGap : 0px, $rows: 0) {
-    display: grid;
-    grid-gap: $rowGap $colGap;
-    grid-template-columns: repeat($cols, 1fr);
-
-    @if($rows != 0){
-        grid-template-rows: repeat($rows, 1fr);
-    } @else {
-        grid-template-rows: auto;
-    }
-}
-
-@mixin cols-of($colWidth, $colGap: 2rem, $max: 1fr, $bp: 400px){
-    display: grid;
-    gap: $colGap;
-    grid-template-columns: repeat(auto-fit, minmax($colWidth, $max));
-    > * {
-        max-width: 100%;
-    }
-    @media (max-width: #{$bp}) {
-        grid-template-columns: repeat(auto-fit, minmax(100%, $max));
-    }
-}
-
-@for $i from 1 through 20 {
-    .cols-of-#{$i * 50} {
-        @include cols-of(#{$i * 50}px, 2rem, 1fr, #{$i * 75}px);
-        &.-no-max {
-            grid-template-columns: repeat(auto-fit, #{$i * 50}px);
-        }
-    }
-}
+@use '../settings/palette.scss' as *;
 
 @mixin reset-btn {
     cursor: pointer;
@@ -128,13 +16,14 @@
     list-style: none;
 }
 
-@mixin box-shadow {
-    box-shadow: 0px 0px 6px -4px map-get($palette, "blackest");
+@mixin box-shadow($color: #000) {
+    box-shadow: 0px 0px 6px -4px $color;
 }
 
-@mixin dropdown {
+@mixin dropdown($bgColor: #fff, $hoverColor: grey) {
     @include reset-ul;
-    background-color: map-get($palette, "off-white");
+    // background-color: map-get($palette, "off-white");
+    background-color: $bgColor;
     border-radius: 4px;
     @include box-shadow;
     height: 0px;
@@ -164,18 +53,62 @@
             transition: color 1s, background-color 1s;
             width: 100%;
             &:hover {
-                color: map-get($palette, "off-white");
-                background-color: map-get($palette, "dark-gray");
+                // color: map-get($palette, "off-white");
+                color: $bgColor;
+                // background-color: map-get($palette, "dark-gray");
+                background-color: $hoverColor;
             }
         }
     }
 }
 
-@mixin hrs($borderColor: $text-0){
+// @mixin hrs($borderColor: $text-0){
+@mixin hrs($borderColor: #808080){
     border: 0;
     border-bottom: 1px solid $borderColor;
 }
 
-hr {
-  @include hrs;
+@mixin text-alignments {
+    &.text-right {
+        text-align: right;
+    }
+    &.text-center {
+        text-align: center;
+    }
+    &.text-left {
+        text-align: left;
+    }
+}
+
+// @mixin ellipsis($color: $text-faint) {
+@mixin ellipsis($color: #acacac) {
+    menu > ul > li {
+        padding: 0;
+        > button {
+            color: $color;
+            display: inline-block;
+            line-height: 0;
+            font-size: 1.5rem;
+            vertical-align: text-top;
+        }
+    }
+}
+
+@each $color, $val in $palette {
+    .bg-#{"" + $color} {
+        background-color: $val;
+    }
+    .text-#{"" +$color} {
+       color: $val;
+    }
+}
+
+@mixin states($color: grey, $hoverColor: lightgray) {
+    &, &:link, &:visited {
+        color: $color;
+        transition: color 0.2s linear;
+    }
+    &:hover, &:active {
+        color: $hoverColor;
+    }
 }

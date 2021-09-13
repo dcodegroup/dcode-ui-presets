@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'welcome')->name('home');
+Route::view('reference', 'demo-pages/styleguide-reference')->name('reference');
 
 Route::group([
     'prefix' => 'layouts',

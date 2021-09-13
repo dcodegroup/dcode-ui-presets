@@ -41,7 +41,15 @@ class DcodePreset extends Preset
             return str_replace("RouteServiceProvider::HOME", "route('home')", $file);
         });
     }
-
+    
+    public static function updateSass()
+    {
+        $filesystem = new Filesystem();
+        $filesystem->deleteDirectory(resource_path('sass/base'));
+        $filesystem->copyDirectory(__DIR__ . '/../stubs/default/resources/sass/base/', resource_path('sass/base'));
+        $filesystem->deleteDirectory(resource_path('sass/components'));
+        $filesystem->copyDirectory(__DIR__ . '/../stubs/default/resources/sass/components/', resource_path('sass/components'));
+    }
     // public static function installAuth()
     // {
     //     $filesystem = new Filesystem();

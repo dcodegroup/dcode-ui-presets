@@ -11,7 +11,12 @@ const mix = require("laravel-mix");
  |
  */
 
-mix.js("resources/js/app.js", "public/js/app.js")
+mix
+    .js("resources/js/app.js", "public/js/app.js")
+    .copy([
+        "resources/sass/settings/fonts/inter",
+        "resources/sass/page-layouts/styleguide/branding/fonts/",
+    ], "public/fonts/")
     .sass("resources/sass/app.scss", "public/css/app.css")
     .vue();
 

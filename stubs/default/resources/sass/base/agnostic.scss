@@ -63,3 +63,12 @@
         }
 	}
 }
+
+@function shade($color, $percentage) {
+    @return mix(#000, $color, $percentage);
+}
+
+@function tint($color, $percentage) {
+    @return mix(#fff, $color, $percentage);
+}
+

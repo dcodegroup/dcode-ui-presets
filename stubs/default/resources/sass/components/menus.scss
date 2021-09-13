@@ -1,4 +1,7 @@
 @use '../base' as *;
+@use '../settings/palette.scss' as *;
+@use '../settings/typography.scss' as *;
+@use '../settings/variables.scss' as *;
 
 
 menu > ul,

@@ -30,20 +30,3 @@ $table-bg: map-get($palette, "off-white");
 $table-border: map-get($palette, "light-gray");
 
 $form-error: map-get($palette, "danger");
-
-@function shade($color, $percentage) {
-    @return mix(#000, $color, $percentage);
-}
-
-@function tint($color, $percentage) {
-    @return mix(#fff, $color, $percentage);
-}
-
-@each $color, $val in $palette {
-    .bg-#{"" + $color} {
-        background-color: $val;
-    }
-    .text-#{"" +$color} {
-       color: $val;
-    }
-}

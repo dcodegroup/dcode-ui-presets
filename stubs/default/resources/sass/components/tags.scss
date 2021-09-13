@@ -1,4 +1,7 @@
 @use '../base' as *;
+@use '../settings/palette.scss' as *;
+@use '../settings/variables.scss' as *;
+
 
 .tag {
     background-color: map-get($palette, 'light-gray');

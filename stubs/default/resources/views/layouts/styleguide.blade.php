@@ -5,7 +5,7 @@
     <aside>
         <header>
             <img src="{{ asset('/imgs/logos/dcode.svg') }}" alt="Dcode logo" width="50"/>
-            <h1>Dcode Styleguide</h1>
+            <h1>{{ config('app.name') }} Styleguide</h1>
         </header>
         <nav>
             <ul class="vertical">
