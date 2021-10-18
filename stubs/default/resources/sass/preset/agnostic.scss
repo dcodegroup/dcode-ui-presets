@@ -4,7 +4,7 @@
  *  The utilities in this file are completely project-agnostic
 */
 
-$inputs: '[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], select, textarea';
+$inputs: '[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='phone'], [type='color'], select, textarea';
 $text-els: 'h1, h2, h3, h4, h5, p, li, td, th';
 $p-els: 'p, li, small';
 
