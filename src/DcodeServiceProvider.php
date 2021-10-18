@@ -23,7 +23,7 @@ class DcodeServiceProvider extends ServiceProvider
             //     DcodePreset::installAuth();
             //     $command->info('Auth scaffolding installed successfully.');
             // }
-            $command->comment('Please run "npm install && npm run dev" to compile your new assets.');
+            $command->comment('Please run "npm i && npm run dev" to compile your new assets.');
         });
 
         Paginator::defaultView('pagination::default');

@@ -1,0 +1,143 @@
+@use './palette.scss' as *;
+
+$background-faint: map-get($palette, 'off-white');
+$body-max-width: 1400px;
+$radius: 4px;
+$white: map-get($palette, 'whitest');
+
+$button-border-radius: $radius;
+$button-padding: .75rem 1rem;
+$clickable-f-size: 14px;
+$success-color: map-get($palette, "success");
+
+//card settimgs
+$card-border-radius: 8px;
+$card-bg: $white;
+$card-header-color: map-get($palette, "secondary");
+$card-header-f-size: 14px;
+
+//standard input settings
+$input-border: 1px solid map-get($palette, 'blackest');
+$input-radius: $radius;
+$input-padding: .75rem;
+$placeholder-color: map-get($palette, 'medium-gray');
+$form-error-color: map-get($palette, 'danger');
+
+//checkbox radio button settings
+$check-btn-bg-unchecked: map-get($palette, "medium-gray");
+$check-btn-bg-checked: rgba(map-get($palette, "secondary"),.85) ;
+$check-btn-color-checked: $white;
+
+//checkbox radio input settings
+$check-radio-border: 1px solid map-get($palette, "dark-gray");
+$check-radio-icon: "\2713";
+$check-radio-checked-color: $success-color;
+$check-radio-checked-bg-color: $white;
+ 
+//checkbox radio toggle settings
+$toggles-label-color: map-get($palette, "dark-gray");
+$toggles-unchecked-color: map-get($palette, "medium-gray");
+$toggles-hover-color: map-get($palette, "blackest");
+$toggles-checked-color: map-get($palette, "primary");
+
+//table settings
+$table-border: map-get($palette, "med-dark-gray");
+$table-collapse-breakpoint: 'lg';
+$table-header-color: map-get($palette, "secondary");
+
+//tab settings
+$table-bg: $white;
+$tab-color: map-get($palette, "medium-gray");
+$active-tab-border-color: $success-color;
+$active-tab-color: map-get($palette, "dark-gray");
+$tab-padding: 0 1.25rem .75rem;
+$tab-panel-padding: 1rem;
+
+//tag settings
+$tag-bg: map-get($palette, "light-gray");
+$tag-color: map-get($palette, "secondary");
+$tag-radius: $radius;
+
+//tile settings
+$tile-color: map-get($palette, "light-gray");
+$tile-radius: $radius;
+
+//menus
+$menu-active-color: map-get($palette, "secondary");
+$menu-f-size: $clickable-f-size;
+$menu-f-weight: bold;
+$dd-text-align: center;
+$dd-items-padding: 0.5rem 0.75rem;
+
+//button settings
+// $base-buttons: (
+//   color: $text-2, 
+//   hover-color: $text-1, 
+//   bg-color: map-get($palette, "light-gray"), 
+//   bg-change: "shade", 
+//   intesity: 15%,
+// );
+
+// $base-hollow-buttons: (
+//   color: $text-2, 
+//   hover-color: $text-1, 
+//   bg-change: "tint"
+// );
+
+// button settings for solid and hollow buttons
+$buttons-variants: (
+  primary: (
+    color: $text-3,
+    hover-color: $text-5,
+    bg-color: map-get($palette, "primary"),
+  ),
+  secondary: (
+    color: $text-4,
+    hover-color: $text-5,
+    bg-color: map-get($palette, "secondary"),
+  ),
+  success: (
+    color: shade(map-get($palette, "success"), 55%), 
+    hover-color: $text-5,
+    bg-color: map-get($palette, "success"),
+  ),
+  white: (
+    color: $text-0, 
+    hover-color: $text-1, 
+    bg-color: $white,
+  )
+);
+
+
+/// The number of columns in a flex-col and gutter size (converted to pixel value). 
+$columns: (
+  xs: (
+    columns: 2,
+    gutter: 16,
+  ),
+  sm: (
+    columns: 6,
+    gutter: 12,
+  ),
+  md: (
+    columns: 12,
+    gutter: 8,
+  ),
+  lg: (
+    columns: 12,
+    gutter: 8,
+  ),
+  xl: (
+    columns: 12,
+    gutter: 8,
+  )
+) !default;
+
+$breakpoints: (
+  xs: 350px,
+  sm: 480px,
+  md: 764px,
+  lg: 1024px,
+  xl: 1170px,
+  xxl: 1400px
+) !default;

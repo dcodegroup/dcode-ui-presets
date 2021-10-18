@@ -1,0 +1,29 @@
+@use '../' as *;
+
+@mixin alerts($palette: $preset-palette) {
+    @include space-between-center;
+    border: 1px solid;
+    font-size: 18px;
+    height: auto;
+    opacity: 1;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: height 1s, opacity 1s;
+    > button {
+        @include reset-btn;
+    }
+    @each $color, $val in $palette {
+        &.#{"" + $color} {
+            background-color: tint($val, 85%);
+            border-color: $val;
+            color: $val;
+            small,
+            span {
+                color: $val;
+            }
+            button {
+                color: $val;  
+            }
+        }
+    }
+}

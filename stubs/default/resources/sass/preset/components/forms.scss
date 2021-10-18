@@ -1,0 +1,19 @@
+@use '../' as *;
+@use '../mixins/forms.scss' as *;
+
+@use '../../config/variables.scss' as *;
+
+#{$inputs}{
+    @include input-common($input-border, $input-radius, $input-padding, $placeholder-color);
+    @if (mixin-exists('input-settings')) {
+        @include input-settings;
+    }
+}
+
+form,
+.form {
+    @include forms($form-error-color);
+    @if (mixin-exists('form-settings')) {
+        @include form-settings;
+    }
+}

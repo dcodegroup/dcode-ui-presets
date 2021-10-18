@@ -16,7 +16,7 @@
             <code>
 {{ "
 \$columns: (
-    xs: (
+  xs: (
     columns: 2,
     gutter: 16,
   ),
@@ -24,7 +24,15 @@
     columns: 6,
     gutter: 12,
   ),
+  md: (
+    columns: 12,
+    gutter: 8,
+  ),
   lg: (
+    columns: 12,
+    gutter: 8,
+  ),
+  xl: (
     columns: 12,
     gutter: 8,
   )
@@ -35,16 +43,16 @@
     </div>
     <hr>
     <h3>Demo</h3>
-    <p>The below demo is a large 12 column flex column layout with a <code>.justify-between</code> css class included.</p>
+    <p>The below demo is a xl 12 column flex column layout with a <code>.justify-between</code> css class included.</p>
     <div class="demo">
         <div class="flex-cols justify-between">
-            <div class="lg-4">Large 4</div>
-            <div class="lg-2">Large 2</div>
-             <div class="lg-3">large 3</div>
-            <div class="lg-1">large 1</div>
+            <div class="xl-4 lg-4">XLarge 4</div>
+            <div class="xl-2">XLarge 2</div>
+             <div class="xl-3">XLarge 3</div>
+            <div class="xl-1">XLarge 1</div>
 
-            <div class="lg-5 ">large 5</div>
-            <div class="lg-6 ">large 6</div>
+            <div class="xl-5 ">XLarge 5</div>
+            <div class="xl-6 ">XLarge 6</div>
          </div>
     </div>
     <hr>
@@ -56,13 +64,13 @@
     <p>The below demo has both the <code>.padd</code> and the<code>.mrg</code> css classes included.</p>
     <div class="demo">
         <div class="flex-cols">
-            <div class="lg-4 padd mrg">Large 4</div>
-            <div class="lg-2 padd mrg">Large 2</div>
-            <div class="lg-2 padd mrg">Large 2</div>
-            <div class="lg-3 padd mrg">large 3</div>
-            <div class="lg-1 padd mrg">large 1</div>
-            <div class="lg-5 padd mrg">large 5</div>
-            <div class="lg-6 padd mrg">large 6</div>
+            <div class="xl-4 padd mrg">XLarge 4</div>
+            <div class="xl-2 padd mrg">XLarge 2</div>
+            <div class="xl-2 padd mrg">XLarge 2</div>
+            <div class="xl-3 padd mrg">XLarge 3</div>
+            <div class="xl-1 padd mrg">XLarge 1</div>
+            <div class="xl-5 padd mrg">XLarge 5</div>
+            <div class="xl-6 padd mrg">XLarge 6</div>
          </div>
     </div>
     <hr>
@@ -73,7 +81,7 @@
             <code>
 {{ "
 .flex-cols {
-    @'include flex-cols(lg);
+    @'include flex-cols(xl);
     > div {
         background-color: \$dcode-turquoise;
         border: 1px solid #fff;

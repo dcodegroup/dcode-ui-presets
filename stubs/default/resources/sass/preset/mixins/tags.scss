@@ -1,0 +1,33 @@
+@use '../' as *;
+
+@mixin tags(
+    $tag-bg: map-get($preset-palette, 'off-white'), 
+    $tag-color: map-get($preset-palette, 'off-white'), 
+    $tag-radius: 4px,
+    $palette: $preset-palette ) {
+    background-color: $tag-bg;
+    border-radius: $tag-radius;
+    border: 1px solid $tag-bg;
+    color: $tag-color;
+    display: inline-block;
+    font-size: 14px;
+    margin: 0;
+    padding: .15rem .5rem;
+    transition: background-color 1s, color 1s;
+    width: auto;
+
+    @each $color, $val in $palette {
+        &.bg-#{"" + $color} {
+            border-color: $val;
+            background-color: $val;
+        }
+        &.text-#{"" + $color} {
+           color: $val;
+        }
+        &.hollow-#{"" + $color} {
+            background-color: transparent;
+            border-color: $val;
+            color: $val;
+        }
+    }
+}

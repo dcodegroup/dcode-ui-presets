@@ -12,7 +12,7 @@
                 {{-- <li><a href="">Getting Started</a><li> --}}
                 {{-- <li><a href="">Design Guidelines</a><li> --}}
                 <li>
-                    <a href="{{ route('styleguide.globals.index') }}">Globals</a>
+                    <button>Globals</button>
                     <ul>
                         <li>
                             <a href="{{ route('styleguide.globals.buttons') }}">Buttons</a>
@@ -38,30 +38,25 @@
                             <a href="{{ route('styleguide.components.cards') }}">Cards</a>
                         </li>
                         <li>
-                            <a href="{{ route('styleguide.components.forms') }}">Forms</a>
-                            <ul>
-                                <li>
-                                    <a href="{{ route('styleguide.components.forms.checkboxes') }}">Checkboxes</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('styleguide.components.forms.checkbox-btns') }}">Checkbox Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('styleguide.components.forms.checkbox-toggles') }}">Checkbox Toggles</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('styleguide.components.forms.checkbox-btn-groups') }}">Checkbox Button Groups</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('styleguide.components.forms.search-inputs') }}">Search Inputs</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('styleguide.components.forms.select-filters') }}">Select Filters</a>
-                                </li>
-                                {{-- <li>
-                                    <a href="{{ route('styleguide.components.forms.date-pickers') }}">Date Pickers</a>
-                                </li> --}}
-                            </ul>
+                            <a href="{{ route('styleguide.components.forms') }}">Forms</a> 
+                        </li>
+                        <li>
+                            <a href="{{ route('styleguide.components.forms.checkboxes') }}">Checkboxes</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('styleguide.components.forms.checkbox-btns') }}">Checkbox Buttons</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('styleguide.components.forms.checkbox-toggles') }}">Checkbox Toggles</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('styleguide.components.forms.checkbox-btn-groups') }}">Checkbox Button Groups</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('styleguide.components.forms.search-inputs') }}">Search Inputs</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('styleguide.components.forms.select-filters') }}">Select Filters</a>
                         </li>
                         <li>
                             <a href="{{ route('styleguide.components.navs') }}">Navigation</a>

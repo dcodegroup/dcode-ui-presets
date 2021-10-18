@@ -1,0 +1,16 @@
+@use '../mixins/tags.scss' as *;
+@use '../../config/variables.scss' as *;
+@use '../../config/palette.scss' as *;
+
+.tag  {
+    //needs if else check
+    @include tags(
+        $tag-bg, 
+        $tag-color, 
+        $tag-radius,
+        $palette: $palette,
+    );
+    @if (mixin-exists('tags-settings')) {
+        @include tags-settings;
+    }
+}

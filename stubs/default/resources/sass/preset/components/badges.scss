@@ -1,0 +1,10 @@
+@use '../mixins/badges.scss' as *;
+@use '../../config/variables.scss' as *;
+
+
+.badge {
+    @include badges;
+    @if (mixin-exists('badge-settings')) {
+        @include badges-settings;
+    }
+}

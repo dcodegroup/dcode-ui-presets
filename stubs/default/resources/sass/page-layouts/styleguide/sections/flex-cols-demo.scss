@@ -1,14 +1,19 @@
-@use '../../../base' as *;
+@use '../../../preset/layouts.scss' as *;
 @use "../branding" as *;
 
 #styleguide-layout  {
     .flex-cols {
+        @include flex-cols(sm);
+        @include flex-cols(md);
         @include flex-cols(lg);
+        @include flex-cols(xl);
+
         > div {
             background-color: $dcode-turquoise;
             border: 1px solid #fff;
             color: #fff;
             min-height: 100px;
+            padding: 1rem;
             margin-bottom: 1rem;
         }
     }

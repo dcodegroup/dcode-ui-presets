@@ -1,6 +1,7 @@
-@use '../../../base/' as *;
-@use '../../../settings/variables.scss' as *;
-@use '../../../settings/palette.scss' as *;
+@use '../../../preset/' as *;
+@use '../../../config/variables.scss' as *;
+@use '../../../config/palette.scss' as *;
+@use '../../../config/typography.scss' as *;
 @forward './show.scss';
 @forward './styleguide-reference.scss';
 
@@ -40,11 +41,13 @@ html {
                 @include space-between-center;
                 margin-bottom: 2rem;
                 .form  {
-                    @include space-between-center;
+                    @include space-between;
                     > * {
                         margin-right: .5rem;
                     }
-
+                    .checkbox-btn span {
+                        padding: 0.65rem 1rem;
+                    }
                     .checkbox-btn,
                     p {
                         margin-bottom: 0;

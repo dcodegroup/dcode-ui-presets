@@ -1,0 +1,42 @@
+@use '../' as *;
+
+@mixin cards(
+        $bg: map-get($preset-palette, 'off-white'), 
+        $border-radius: 4px,
+        $header-color: map-get($preset-palette, 'secondary'),
+        $header-f-size: 16px,
+        $selected-bg-color: map-get($preset-palette, 'secondary')
+    ) {
+    background-color: $bg;
+    border: 1px solid $bg;
+    border-radius: $border-radius;
+    margin-bottom: .5rem;
+    padding: .5rem;
+    transition: border-color 1s;
+
+    > header {
+        @include space-between-center;
+        color: $header-color;
+        margin-bottom: 5px;
+        p, h3 {
+            font-family: 1rem;
+            margin: 0;
+            line-height: 1;
+            font-size: $header-f-size;
+        }
+        div {
+            @include space-between-center;
+            .badge {
+                margin-right: .5rem;
+            }
+        }
+        @include ellipsis;
+    }
+    &.selected {
+        @include box-shadow;
+        border-color: $selected-bg-color;
+        > header {
+            color: $selected-bg-color;
+        }
+    }
+}

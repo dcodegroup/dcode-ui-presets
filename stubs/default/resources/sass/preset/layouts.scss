@@ -1,0 +1,127 @@
+@use 'sass:math';
+@use './breakpoints.scss' as *;
+@use '../config/variables.scss' as *;
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+@mixin flex-classes {
+    &.justify-between {
+        justify-content: space-between;
+    }
+    &.justify-center {
+        justify-content: center;
+    }
+    &.justify-start {
+        justify-content: flex-start;
+    }
+    &.justify-end {
+        justify-content: flex-end;
+    }
+    &.align-center {
+        align-content: center;
+    }
+    &.align-top {
+        align-content: flex-start;
+    }
+    &.align-bottom {
+        align-content: flex-end;
+    }
+    &.no-wrap {
+        flex-wrap: nowrap;
+    }
+}
+
+@mixin flex-cols($breakpoint: xs) {
+    $column: map-get($columns, $breakpoint);
+    @if $column == null {
+      @error 'Column `#{$breakpoint}` not found.';
+    }
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    $cols: map-get($column, columns);
+    $gutter: map-get($column, gutter);
+    @include media-breakpoint-up($breakpoint) {
+        @for $i from 1 through $cols {
+            .#{$breakpoint}-#{$i} {
+                width: math.div($i, $cols) * 100 * 1%;
+                border: none;
+            }
+            .#{$breakpoint}-#{$i}.padd {
+                padding-left: #{$gutter}px;
+                padding-right: #{$gutter}px;
+            }
+            .#{$breakpoint}-#{$i}.mrg {
+                margin-left: #{$gutter}px;
+                margin-right: #{$gutter}px;
+                width: calc((#{math.div($i, $cols) * 100 * 1%}) - #{$gutter * 2}px);
+            }
+        }
+    }
+    @include flex-classes;
+}
+
+@mixin align-center {
+    display: flex;
+    align-items: center;
+}
+@mixin space-between {
+    display: flex;
+    justify-content: space-between;
+}
+@mixin space-between-center {
+    @include space-between;
+    align-items: center;
+}
+.align-center {
+    @include align-center;
+}
+.space-between-center {
+    @include space-between-center;
+}
+.flex {
+    display: flex;
+    @include flex-classes;
+}
+.f-flow {
+    flex-flow: wrap;
+}
+
+//Grid helpers
+@mixin grids($cols: 1, $colGap : 0px,  $rowGap : 0px, $rows: 0) {
+    display: grid;
+    grid-gap: $rowGap $colGap;
+    grid-template-columns: repeat($cols, 1fr);
+
+    @if($rows != 0){
+        grid-template-rows: repeat($rows, 1fr);
+    } @else {
+        grid-template-rows: auto;
+    }
+}
+
+@mixin cols-of($colWidth, $colGap: 2rem, $max: 1fr, $bp: 400px){
+    display: grid;
+    gap: $colGap;
+    grid-template-columns: repeat(auto-fit, minmax($colWidth, $max));
+    > * {
+        max-width: 100%;
+    }
+    @media (max-width: #{$bp}) {
+        grid-template-columns: repeat(auto-fit, minmax(100%, $max));
+    }
+}
+
+@for $i from 1 through 20 {
+    .cols-of-#{$i * 50} {
+        @include cols-of(#{$i * 50}px, 2rem, 1fr, #{$i * 75}px);
+        &.-no-max {
+            grid-template-columns: repeat(auto-fit, #{$i * 50}px);
+        }
+    }
+}
