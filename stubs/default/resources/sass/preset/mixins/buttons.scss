@@ -14,7 +14,7 @@
         cursor: not-allowed;
     }
 }
-@mixin button-common-states($color: #8a8a8a, $hover-color: #767676, $bg-color: #e6e6e6, $bg-change: "shade", $intesity: 15%){
+@mixin button-common-states($color: #8a8a8a, $hover-color: $color, $bg-color: #e6e6e6, $bg-change: "shade", $intesity: 15%){
     &, &:link, &:visited {
         color: $color;
         background-color: $bg-color;

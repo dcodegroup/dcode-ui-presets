@@ -49,7 +49,6 @@
                     &.-#{$key} {
                         @include button-hollow-states(
                         varients($buttons-variants, $key, bg-color),
-                        varients($buttons-variants, $key, color),
                         );
                     }
                 }
