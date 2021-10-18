@@ -1,5 +1,5 @@
 @use 'sass:math';
-
+@use '../config/variables.scss' as *;
 /**
  *  The utilities in this file are completely project-agnostic
 */
