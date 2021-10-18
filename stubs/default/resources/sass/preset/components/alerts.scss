@@ -1,0 +1,11 @@
+
+@use '../mixins/alerts.scss' as *;
+@use '../../config/palette.scss' as *;
+@use '../../config/variables.scss' as *;
+
+.alert {
+    @include alerts($palette);
+    @if (mixin-exists('alert-settings')) {
+        @include alert-settings;
+    }
+}

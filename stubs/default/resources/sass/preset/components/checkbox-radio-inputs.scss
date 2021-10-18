@@ -1,0 +1,11 @@
+@use '../mixins/check-radio-input.scss' as *;
+@use '../../config/variables.scss' as *;
+
+label.checkbox,
+label.radio {
+    //needs if else
+    @include check-radio-inputs($check-radio-border, $check-radio-icon, $check-radio-checked-color, $check-radio-checked-bg-color);
+    @if (mixin-exists('check-radio-input-settings')) {
+        @include check-radio-input-settings;
+    }
+}

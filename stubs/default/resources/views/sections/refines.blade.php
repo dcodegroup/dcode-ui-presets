@@ -4,20 +4,20 @@
             <a href="#" class="button white">View Tasks</a>
             <a href="#" class="button white">Add New Team</a>
         </div>
-        <label for="day" class="checkbox-btn bg-whitest">
+        <label for="day" class="checkbox-btn btn-whitest">
             <input type="checkbox" id="day" />
             <span>Day</span>
         </label>
-        <label for="week" class="checkbox-btn bg-whitest">
+        <label for="week" class="checkbox-btn btn-whitest">
             <input type="checkbox" id="week" />
             <span>Week</span>
         </label>
-        <label for="month" class="checkbox-btn bg-whitest">
+        <label for="month" class="checkbox-btn btn-whitest">
             <input type="checkbox" id="month" />
             <span>Month</span>
         </label>
     </div>
-    <div class="form">
+    <!-- <div class="form">
         <div class="select-filter-input">
             <p>
                 <label for="sort_by">Sort:</label>
@@ -38,7 +38,7 @@
                     <button>Location</button>
                 </li>
             </ul>
-        </div>
+        </div> 
         <div class="select-filter-input">
             <p>
                 <label for="filter_by">Fiter:</label>
@@ -80,6 +80,6 @@
                     <button>Sat 11 - Tue 15</button>
                 </li>
             </ul>
-        </div>
-    </div>
+        </div> 
+    </div> -->
  </header>

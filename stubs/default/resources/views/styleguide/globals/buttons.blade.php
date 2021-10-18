@@ -68,6 +68,17 @@
             </svg>
         </a>
     </div>
+    <hr>
+    <h3>Button groups</h3>
+    <p>These can be created using a container with the class of <code>.btn-group</code> and works with both .button and .checkbox-btn elements.</p>
+    <div class="demo">
+        <div class="btn-group">
+            <a href="#" class="button">Generic button</a>
+            <a href="#" class="button primary">Button Primary</a>
+            <a href="#" class="button secondary">Button Secondary</a>
+            <a href="#" class="button success">Button Success</a>
+        </div>
+    </div>
 </div>
 @endsection
 

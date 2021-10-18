@@ -1,0 +1,34 @@
+@use '../' as *;
+
+@mixin tiles($tile-color: map-get($preset-palette, 'light-gray'), $tile-radius: 4px, $palette: $preset-pallete) {
+    background-color: $tile-color;
+    border-radius: $tile-radius;
+    border: 1px solid shade($tile-color, 5%);
+    margin-bottom: 1px;
+    transition: background-color 1s, border-color 1s, color 1s;
+    @include align-center;
+    .badge {
+        + small,
+        + p {
+            margin-left: 5px;
+        }
+    }
+    small,
+    p {
+        font-size: 14px;
+        line-height: 1;
+        margin: 0;
+    }
+    @each $color, $val in $palette {
+        &.bg-#{"" + $color} {
+            border-color: $val;
+            background-color: $val;
+        }
+        &.text-#{"" + $color} {
+           color: $val;
+           * {
+             color: $val;  
+           }
+        }
+    }
+}

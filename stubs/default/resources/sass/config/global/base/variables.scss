@@ -1,0 +1,43 @@
+$body-max-width: 1400px;
+$button-border-radius: 4px;
+$button-padding: .75rem 1rem;
+$inputs: '[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], select, textarea';
+$text-els: 'h1, h2, h3, h4, h5, p, li, td, th';
+$p-els: 'p, li, small';
+
+/// The number of columns in a flex-col and gutter size (converted to pixel value).
+///
+/// @group tokens
+/// @type Map
+/// 
+$columns: (
+  xs: (
+    columns: 2,
+    gutter: 16,
+  ),
+  sm: (
+    columns: 6,
+    gutter: 12,
+  ),
+  md: (
+    columns: 8,
+    gutter: 8,
+  ),
+  lg: (
+    columns: 12,
+    gutter: 8,
+  ),
+  xl: (
+    columns: 14,
+    gutter: 8,
+  )
+) !default;
+
+$breakpoints: (
+  xs: 350px,
+  sm: 480px,
+  md: 764px,
+  lg: 1024px,
+  xl: 1400px,
+  xxl: 2000px
+) !default;

@@ -19,7 +19,7 @@
                 <li><a href="#checkbox-buttons">Checkbox Buttons</a></li>
                 <li><a href="#checkbox-groups">Checkbox Groups</a></li>
                 <li><a href="#checkbox-toggles">Checkbox Toggles</a></li>
-                <li><a href="#select-filters">Select Filters</a></li>
+                <!-- <li><a href="#select-filters">Select Filters</a></li> -->
                 <li><a href="#menus">Menus</a></li>
                 <li><a href="#tables">Tables</a></li>
                 <li><a href="#tabs">Tabs</a></li>
@@ -33,7 +33,7 @@
         <h2>Styleguide Reference</h2>
         <hr>
         <h3><a name="buttons">Buttons</a></h3>
-        <div>
+        <div class="bg-whitest" style="padding: 1rem;">
             <p>Generic Buttons</p>
             <a href="#" class="button">Generic button</a>
             <a href="#" class="button primary">Button Primary</a>
@@ -45,11 +45,11 @@
             <a href="#" class="button -hollow">Button Hollow</a>
             <a href="#" class="button -hollow -success">Button Hollow Success</a>
         </div>
-        <div>
+        <div class="bg-whitest" style="padding: 1rem;">
             <p>Small Buttons</p>
             <a href="#" class="button sml">Small Button </a>
         </div>
-        <div>
+        <div class="bg-whitest" style="padding: 1rem;">
             <p>Buttons with Icons</p>
             <a href="#" class="button icon-left">Add List
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -98,8 +98,8 @@
                 <p class="text-dark-gray">Dark Gray</p>
             </div>
             <div class="colour-block">
-                <div class="bg-black"></div>
-                <p class="text-black">Black</p>
+                <div class="bg-blackest"></div>
+                <p class="text-blackest">Black</p>
             </div>
             <div class="colour-block bg-dark-gray">
                 <div class="bg-light-gray"></div>
@@ -109,9 +109,9 @@
                 <div class="bg-off-white"></div>
                 <p class="text-off-white">Off White</p>
             </div>
-            <div class="colour-block bg-black">
-                <div class="bg-white"></div>
-                <p class="text-white">White</p>
+            <div class="colour-block bg-blackest">
+                <div class="bg-whitest"></div>
+                <p class="text-whitest">White</p>
             </div>
         </div>
         <hr>
@@ -224,13 +224,13 @@
         </div>
         <hr>
         <div>
-            <h3><a name="checkbox-buttons">Checkbox Buttons</a></h3>
+            <h3><a name="checkbox-buttons">Checkbox Buttons test123</a></h3>
             <form action="#" method="post">
                 <label for="option-one" class="checkbox-btn">
                     <input type="checkbox" id="option-one" />
                     <span>Option 1</span>
                 </label>
-                <label for="option-two" class="checkbox-btn bg-warning">
+                <label for="option-two" class="checkbox-btn btn-warning">
                     <input type="checkbox" id="option-two" />
                     <span>Option 2</span>
                 </label>
@@ -242,16 +242,16 @@
             <h3><a name="checkbox-groups">Checkbox Button Groups</a></h3>
             <form action="#" method="post">
                 <div class="btn-group">
-                    <label for="option-one" class="checkbox-btn">
-                        <input type="checkbox" id="option-one" />
+                    <label for="option-one-a" class="checkbox-btn">
+                        <input type="checkbox" id="option-one-a" />
                         <span>Option 1</span>
                     </label>
-                    <label for="option-two" class="checkbox-btn">
-                        <input type="checkbox" id="option-two" />
+                    <label for="option-two-a" class="checkbox-btn">
+                        <input type="checkbox" id="option-two-a" />
                         <span>Option 2</span>
                     </label>
-                    <label for="option-three" class="checkbox-btn">
-                        <input type="checkbox" id="option-three" />
+                    <label for="option-three-a" class="checkbox-btn">
+                        <input type="checkbox" id="option-three-a" />
                         <span>Option 3</span>
                     </label>
                 </div>
@@ -279,7 +279,7 @@
             </form>
         </div>
         <hr>
-        <div>
+        <!-- <div>
             <h3><a name="select-filters">Select Filters</a></h3>
             <div class="form">
                 <div class="select-filter-input">
@@ -338,7 +338,7 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <hr> -->
         <div>
             <h3><a name="menus">Menus</a></h3>
             <nav>
@@ -381,137 +381,139 @@
         <div>
             <h3><a name="tables">Tables</a></h3>
             <br>
-            <p>Standard</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>User</th>
-                        <th>Latitude</th>
-                        <th>Longitude</th>
-                        <th>Last Record</th>
-                        <th>Active</th>
-                        <th>Last Modified By</th>
-                        <th>Created At</th>
-                        <th>Notes</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td data-header="Name">123abc</td>
-                        <td data-header="User">John Doe</td>
-                        <td data-header="Latitude"> -37.123309</td>
-                        <td data-header="Longitude"> 140.354676</td>
-                        <td data-header="Last Record">26/08/2021 11:39</td>
-                        <td data-header="Active">Y</td>
-                        <td data-header="Last Modified By">Jane Doe</td>
-                        <td data-header="Created At">02/03/2020 20:30</td>
-                        <td data-header="Notes">Notes</a></td>
-                        <td class="actions"> ... </td>
-                    </tr>
-                    <tr>
-                        <td data-header="Name">abc123</td>
-                        <td data-header="User">Jane Doe</td>
-                        <td data-header="Latitude"> -37.123309</td>
-                        <td data-header="Longitude"> 140.354676</td>
-                        <td data-header="Last Record">26/08/2021 11:39</td>
-                        <td data-header="Active">Y</td>
-                        <td data-header="Last Modified By">John Doe</td>
-                        <td data-header="Created At">02/03/2020 20:30</td>
-                        <td data-header="Notes">Notes</a></td>
-                        <td class="actions"> ... </td>
-                    </tr>
-                </tbody>
-            </table>
-            <br>
-            <p>Background rows</p>
-            <table class="bg-rows">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>User</th>
-                        <th>Latitude</th>
-                        <th>Longitude</th>
-                        <th>Last Record</th>
-                        <th>Active</th>
-                        <th>Last Modified By</th>
-                        <th>Created At</th>
-                        <th>Notes</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="bg-success">
-                        <td data-header="Name">123abc</td>
-                        <td data-header="User">John Doe</td>
-                        <td data-header="Latitude"> -37.123309</td>
-                        <td data-header="Longitude"> 140.354676</td>
-                        <td data-header="Last Record">26/08/2021 11:39</td>
-                        <td data-header="Active">Y</td>
-                        <td data-header="Last Modified By">Jane Doe</td>
-                        <td data-header="Created At">02/03/2020 20:30</td>
-                        <td data-header="Notes">Notes</a></td>
-                        <td class="actions"> ... </td>
-                    </tr>
-                    <tr class="bg-secondary text-whitest">
-                        <td data-header="Name">abc123</td>
-                        <td data-header="User">Jane Doe</td>
-                        <td data-header="Latitude"> -37.123309</td>
-                        <td data-header="Longitude"> 140.354676</td>
-                        <td data-header="Last Record">26/08/2021 11:39</td>
-                        <td data-header="Active">Y</td>
-                        <td data-header="Last Modified By">John Doe</td>
-                        <td data-header="Created At">02/03/2020 20:30</td>
-                        <td data-header="Notes">Notes</a></td>
-                        <td class="actions"> ... </td>
-                    </tr>
-                </tbody>
-            </table>
-            <br>
-            <p>Striped</p>
-            <table class="striped">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>User</th>
-                        <th>Latitude</th>
-                        <th>Longitude</th>
-                        <th>Last Record</th>
-                        <th>Active</th>
-                        <th>Last Modified By</th>
-                        <th>Created At</th>
-                        <th>Notes</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td data-header="Name">123abc</td>
-                        <td data-header="User">John Doe</td>
-                        <td data-header="Latitude"> -37.123309</td>
-                        <td data-header="Longitude"> 140.354676</td>
-                        <td data-header="Last Record">26/08/2021 11:39</td>
-                        <td data-header="Active">Y</td>
-                        <td data-header="Last Modified By">Jane Doe</td>
-                        <td data-header="Created At">02/03/2020 20:30</td>
-                        <td data-header="Notes">Notes</a></td>
-                        <td class="actions"> ... </td>
-                    </tr>
-                    <tr>
-                        <td data-header="Name">abc123</td>
-                        <td data-header="User">Jane Doe</td>
-                        <td data-header="Latitude"> -37.123309</td>
-                        <td data-header="Longitude"> 140.354676</td>
-                        <td data-header="Last Record">26/08/2021 11:39</td>
-                        <td data-header="Active">Y</td>
-                        <td data-header="Last Modified By">John Doe</td>
-                        <td data-header="Created At">02/03/2020 20:30</td>
-                        <td data-header="Notes">Notes</a></td>
-                        <td class="actions"> ... </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="bg-whitest" style="padding: 1rem;">
+                <p>Standard</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>User</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th>Last Record</th>
+                            <th>Active</th>
+                            <th>Last Modified By</th>
+                            <th>Created At</th>
+                            <th>Notes</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-header="Name">123abc</td>
+                            <td data-header="User">John Doe</td>
+                            <td data-header="Latitude"> -37.123309</td>
+                            <td data-header="Longitude"> 140.354676</td>
+                            <td data-header="Last Record">26/08/2021 11:39</td>
+                            <td data-header="Active">Y</td>
+                            <td data-header="Last Modified By">Jane Doe</td>
+                            <td data-header="Created At">02/03/2020 20:30</td>
+                            <td data-header="Notes">Notes</a></td>
+                            <td class="actions"> ... </td>
+                        </tr>
+                        <tr>
+                            <td data-header="Name">abc123</td>
+                            <td data-header="User">Jane Doe</td>
+                            <td data-header="Latitude"> -37.123309</td>
+                            <td data-header="Longitude"> 140.354676</td>
+                            <td data-header="Last Record">26/08/2021 11:39</td>
+                            <td data-header="Active">Y</td>
+                            <td data-header="Last Modified By">John Doe</td>
+                            <td data-header="Created At">02/03/2020 20:30</td>
+                            <td data-header="Notes">Notes</a></td>
+                            <td class="actions"> ... </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <p>Background rows</p>
+                <table class="bg-rows">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>User</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th>Last Record</th>
+                            <th>Active</th>
+                            <th>Last Modified By</th>
+                            <th>Created At</th>
+                            <th>Notes</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-success">
+                            <td data-header="Name">123abc</td>
+                            <td data-header="User">John Doe</td>
+                            <td data-header="Latitude"> -37.123309</td>
+                            <td data-header="Longitude"> 140.354676</td>
+                            <td data-header="Last Record">26/08/2021 11:39</td>
+                            <td data-header="Active">Y</td>
+                            <td data-header="Last Modified By">Jane Doe</td>
+                            <td data-header="Created At">02/03/2020 20:30</td>
+                            <td data-header="Notes">Notes</a></td>
+                            <td class="actions"> ... </td>
+                        </tr>
+                        <tr class="bg-secondary text-whitest">
+                            <td data-header="Name">abc123</td>
+                            <td data-header="User">Jane Doe</td>
+                            <td data-header="Latitude"> -37.123309</td>
+                            <td data-header="Longitude"> 140.354676</td>
+                            <td data-header="Last Record">26/08/2021 11:39</td>
+                            <td data-header="Active">Y</td>
+                            <td data-header="Last Modified By">John Doe</td>
+                            <td data-header="Created At">02/03/2020 20:30</td>
+                            <td data-header="Notes">Notes</a></td>
+                            <td class="actions"> ... </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <p>Striped</p>
+                <table class="striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>User</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th>Last Record</th>
+                            <th>Active</th>
+                            <th>Last Modified By</th>
+                            <th>Created At</th>
+                            <th>Notes</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-header="Name">123abc</td>
+                            <td data-header="User">John Doe</td>
+                            <td data-header="Latitude"> -37.123309</td>
+                            <td data-header="Longitude"> 140.354676</td>
+                            <td data-header="Last Record">26/08/2021 11:39</td>
+                            <td data-header="Active">Y</td>
+                            <td data-header="Last Modified By">Jane Doe</td>
+                            <td data-header="Created At">02/03/2020 20:30</td>
+                            <td data-header="Notes">Notes</a></td>
+                            <td class="actions"> ... </td>
+                        </tr>
+                        <tr>
+                            <td data-header="Name">abc123</td>
+                            <td data-header="User">Jane Doe</td>
+                            <td data-header="Latitude"> -37.123309</td>
+                            <td data-header="Longitude"> 140.354676</td>
+                            <td data-header="Last Record">26/08/2021 11:39</td>
+                            <td data-header="Active">Y</td>
+                            <td data-header="Last Modified By">John Doe</td>
+                            <td data-header="Created At">02/03/2020 20:30</td>
+                            <td data-header="Notes">Notes</a></td>
+                            <td class="actions"> ... </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <hr>
         <div>
@@ -534,7 +536,7 @@
         <hr>
         <div>
             <h3><a name="tags">Tags</a></h3>
-            <div class="cols-of-50">
+            <div class="bg-whitest cols-of-50" style="padding: 1rem;">
                 <div>
                     <div class="tag" id="genericTag">Generic tag</div>
                 </div>

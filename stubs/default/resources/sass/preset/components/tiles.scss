@@ -1,0 +1,12 @@
+@use '../mixins/tiles.scss' as *;
+@use '../../config/palette.scss' as *;
+@use '../../config/variables.scss' as *;
+
+.tile  {
+    //needs if else
+    @include tiles($tile-color, $tile-radius, $palette);
+
+    @if (mixin-exists('tile-settings')) {
+        @include tile-settings;
+    }
+}

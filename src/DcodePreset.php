@@ -28,27 +28,17 @@ class DcodePreset extends Preset
         static::updatePackages();
 
         $filesystem = new Filesystem();
+        $filesystem->deleteDirectory(resource_path('css'));
         $filesystem->deleteDirectory(resource_path('sass'));
         $filesystem->deleteDirectory(resource_path('js'));
-
         $filesystem->copyDirectory(__DIR__ . '/../stubs/default', base_path());
-
-        static::updateFile(base_path('app/Providers/RouteServiceProvider.php'), function ($file) {
-            return str_replace("public const HOME = '/home';", "public const HOME = '/';", $file);
-        });
-
-        static::updateFile(base_path('app/Http/Middleware/RedirectIfAuthenticated.php'), function ($file) {
-            return str_replace("RouteServiceProvider::HOME", "route('home')", $file);
-        });
     }
     
     public static function updateSass()
     {
         $filesystem = new Filesystem();
-        $filesystem->deleteDirectory(resource_path('sass/base'));
-        $filesystem->copyDirectory(__DIR__ . '/../stubs/default/resources/sass/base/', resource_path('sass/base'));
-        $filesystem->deleteDirectory(resource_path('sass/components'));
-        $filesystem->copyDirectory(__DIR__ . '/../stubs/default/resources/sass/components/', resource_path('sass/components'));
+        $filesystem->deleteDirectory(resource_path('sass/preset'));
+        $filesystem->copyDirectory(__DIR__ . '/../stubs/default/resources/sass/preset/', resource_path('sass/preset'));
     }
     // public static function installAuth()
     // {

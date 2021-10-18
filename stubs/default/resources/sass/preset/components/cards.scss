@@ -1,0 +1,11 @@
+@use '../' as *;
+@use '../mixins/cards.scss' as *;
+@use '../../config/variables.scss' as *;
+
+.card {
+    //needs an if else
+    @include cards($card-bg, $card-border-radius, $card-header-color, $card-header-f-size); //selected color param not set
+    @if (mixin-exists('card-settings')) {
+        @include card-settings;
+    }
+}

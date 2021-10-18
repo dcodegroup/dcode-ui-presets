@@ -1,0 +1,38 @@
+@use '../' as *;
+
+@mixin tabs(
+        $tab-color: map-get($preset-palette, "medium-gray"),
+        $active-tab-border-color: map-get($preset-palette, "success"),
+        $active-tab-color: map-get($palette, "dark-gray"),
+        $tab-padding: 0 1.25rem .75rem,
+        $tab-panel-padding: 1rem,
+    ) {
+    overflow-x: scroll;
+    > ul {
+        @include hrs;
+        li {
+            border-bottom: 1px solid transparent;
+            transition: border-color 1s;
+            padding: $tab-padding;
+            &.active {
+                border-color: $active-tab-border-color;
+                a, button {
+                    color: $active-tab-color;
+                }
+            }
+            a, button {
+                color: $tab-color;
+                transition: color 1s, border-color 1s;
+            }
+        }
+    }
+    > section {
+        padding: $tab-panel-padding;
+        > div {
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

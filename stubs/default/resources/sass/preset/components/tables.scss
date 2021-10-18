@@ -1,0 +1,18 @@
+@use '../mixins/tables.scss' as *;
+
+@use '../../config/palette.scss' as *;
+@use '../../config/variables.scss'as *;
+
+table {
+    //needs if else
+    @include tables(
+        $table-bg, 
+        $table-border,
+        $palette,
+        $table-header-color,
+        $table-collapse-breakpoint,
+    );
+    @if (mixin-exists('tables-settings')) {
+        @include table-settings;
+    }
+}

@@ -8,8 +8,8 @@
     <div class="content">
         <h3>Checkbox Buttons</h3>
         <p>Adding the css class <code>.checkbox-btn</code> to a container div for child checkbox inputs and span elements will generate the checkbox button.</p>
-        <p>The background colour for the element can be changed by including a <code>.bg-COLOR</code> class to the label container.</p>
-        <p>The text color property and the checked state colors are not affected by the <code>.bg-COLOR</code> class.</p>
+        <p>The background colour for the element can be changed by including a <code>.btn-COLOR</code> class to the label container.</p>
+        <p>The text color property and the checked state colors are not affected by the <code>.btn-COLOR</code> class.</p>
         <hr>
         <h3>HTML Demo</h3>
         <div class="demo">
@@ -18,7 +18,7 @@
                     <input type="checkbox" id="option-one" />
                     <span>Option 1</span>
                 </label>
-                <label for="option-two" class="checkbox-btn bg-warning">
+                <label for="option-two" class="checkbox-btn btn-warning">
                     <input type="checkbox" id="option-two" />
                     <span>Option 2</span>
                 </label>
@@ -34,7 +34,7 @@
                             <input type=\"checkbox\" id=\"option-one\" />
                             <span>Option 1</span>
                         </label>
-                        <label for=\"option-two\" class=\"checkbox-btn bg-warning\">
+                        <label for=\"option-two\" class=\"checkbox-btn btn-warning\">
                             <input type=\"checkbox\" id=\"option-two\" />
                             <span>Option 2</span>
                         </label>

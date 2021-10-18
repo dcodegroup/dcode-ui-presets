@@ -1,0 +1,22 @@
+@mixin badges {
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    &.meta {
+        color: #fff;
+        font-size: 10px;
+        height: 18px;
+        line-height: 2;
+        text-align: center;
+        width: 18px;
+    }
+    &.box {
+        border-radius: 4px;
+        font-size: 14px;
+        height: 22px;
+        line-height: 1.65;
+        margin: 1px;
+        text-align: center;
+        width: 22px;
+    }
+}

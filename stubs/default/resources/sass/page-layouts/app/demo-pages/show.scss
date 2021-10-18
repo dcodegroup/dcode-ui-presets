@@ -1,7 +1,9 @@
-@use '../../../base/' as *;
-@use '../../../settings/palette.scss' as *;
+@use '../../../preset/' as *;
+@use '../../../config/palette.scss' as *;
 
 #demo-pages > #app{
+    @include bg-text-colors($palette);
+
     > main {
         > div.show-layout {
             display: grid;

@@ -1,0 +1,17 @@
+@use '../mixins/check-radio-toggles.scss' as *;
+@use '../../config/variables.scss' as *;
+
+label.checkbox-toggle,
+label.radio-toggle {
+    //needs if else
+    @include check-radio-toggles(
+        $toggles-label-color, 
+        $toggles-unchecked-color, 
+        $toggles-hover-color, 
+        $toggles-checked-color,
+    );
+
+    @if (mixin-exists('check-radio-toggle-settings')) {
+        @include check-radio-toggle-settings;
+    }
+}
