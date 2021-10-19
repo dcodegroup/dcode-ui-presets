@@ -14,7 +14,6 @@
     }
 }
 
-
 @mixin forms($form-error: map-get($preset-palette, 'danger')) {
     > div,
     > fieldset > div {

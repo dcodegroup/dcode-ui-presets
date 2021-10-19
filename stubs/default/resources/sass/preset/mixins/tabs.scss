@@ -7,9 +7,21 @@
         $tab-padding: 0 1.25rem .75rem,
         $tab-panel-padding: 1rem,
     ) {
-    overflow-x: scroll;
+    overflow-x: hidden;
     > ul {
         @include hrs;
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+            height: 8px;
+        }
+        &:-webkit-scrollbar-track {
+            box-shadow: none;
+            background-color: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $active-tab-color;
+            outline: 1px solid rgba($tab-color, .25);
+        }
         li {
             border-bottom: 1px solid transparent;
             transition: border-color 1s;
