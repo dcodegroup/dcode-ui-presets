@@ -10,7 +10,7 @@
     overflow-x: hidden;
     > ul {
         @include hrs;
-        overflow-x: scroll;
+        overflow-x: auto;
         &::-webkit-scrollbar {
             height: 8px;
         }
