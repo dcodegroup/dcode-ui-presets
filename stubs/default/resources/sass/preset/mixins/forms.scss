@@ -17,7 +17,7 @@
 
 @mixin forms($form-error: map-get($preset-palette, 'danger')) {
     > div,
-    > div fieldset > div {
+    > fieldset > div {
         margin-bottom: 1rem;
         position: relative;
         input,
