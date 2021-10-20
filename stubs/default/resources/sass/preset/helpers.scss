@@ -102,6 +102,7 @@ $preset-palette: (
     }
 }
 
+//need to check how this is applied in gradcon
 @mixin bg-text-colors($palette: $preset-palette) {
     @each $color, $val in $palette {
         .bg-#{"" + $color} {

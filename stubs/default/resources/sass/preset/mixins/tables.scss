@@ -17,7 +17,7 @@
         @include text-alignments;
     }
     thead {
-        background-color: $bg-color;
+        background-color: transparent;
         border: none;
         th {
             color: $table-header-color;
@@ -64,6 +64,9 @@
                 &.actions {
                     width: 30px;
                     @include ellipsis;
+                    > menu {
+                        margin: 0;
+                    }
                 }
             }
 
