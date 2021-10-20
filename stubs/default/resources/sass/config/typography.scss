@@ -161,3 +161,13 @@ a,
 button {
     @include states($text-2, $text-1);
 }
+
+dl {
+    dt {
+        margin-top: 1rem;
+        color: map-get($palette, 'secondary');
+    }
+    dd {
+        margin: 0 0 1rem 0;   
+    }
+}
