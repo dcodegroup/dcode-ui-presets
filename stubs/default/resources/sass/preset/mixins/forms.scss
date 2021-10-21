@@ -4,13 +4,15 @@
     background-color: transparent;
     border: $input-border;
     border-radius: $radius;
-    padding: .75rem;
+    padding: $padding;
     transition: border-color 1s;
     width: 100%;
-
     &[disabled],
     &::placeholder {
         color: $placeholder-color;
+    }
+    &:focus {
+        outline: none;
     }
 }
 
