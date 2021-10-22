@@ -13,10 +13,10 @@ class DcodePreset extends Preset
         'sass' => '^1.32',
         'sass-loader' => '^8.0',
         'postcss-import' => '^12.0',
-        'axios' =>  '^0.21',
+        'axios' => '^0.21',
         'vue-loader' => '^15.9.6',
         'vue-template-compiler' => '^2.6',
-        'vue'=> '^2.6',
+        'vue' => '^2.6',
     ];
 
     const NPM_PACKAGES_TO_REMOVE = [
