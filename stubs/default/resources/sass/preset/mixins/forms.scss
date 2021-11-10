@@ -4,7 +4,7 @@
     background-color: transparent;
     border: $input-border;
     border-radius: $radius;
-    padding: $padding;
+    padding: .75rem;
     transition: border-color 1s;
     width: 100%;
     &[disabled],

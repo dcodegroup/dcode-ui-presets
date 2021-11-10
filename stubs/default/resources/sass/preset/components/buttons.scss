@@ -30,12 +30,12 @@
                 }
             }
         }
-        &.sml {
-            @if (variable-exists('button-small')) {
-                @include button-sml(map-values($button-small)...);
-            } @else {
-                @include button-sml;
-            }
+    }
+    &.sml {
+        @if (variable-exists('button-small')) {
+            @include button-sml(map-values($button-small)...);
+        } @else {
+            @include button-sml;
         }
     }
     &.-hollow {

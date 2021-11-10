@@ -49,6 +49,15 @@
             $val in $palette {
                 &.bg-#{"" + $color} {
                     background-color: $val;
+                    td {
+                        &:first-child,
+                        &:last-child{
+                            &::before,
+                            &::after {
+                                background-color: $val;
+                            }
+                        }
+                    }
                 }
 
                 &.text-#{"" + $color} {
@@ -57,7 +66,6 @@
             }
 
             td {
-                // border-top: 1px solid $border-color;
                 font-weight: 400;
                 margin: 0;
 
@@ -135,45 +143,16 @@
                 &:nth-child(odd) {
                     td {
                         background-color: $border-color;
+                        &:first-child,
+                        &:last-child{
+                            &::before,
+                            &::after {
+                                background-color: $border-color;
+                            }
+                        }
                     }
                     @include media-breakpoint-up($collapse-breakpoint) {
                         background-color: $border-color;
-                    }
-                }
-            }
-        }
-    }
-
-    &.bg-rows {
-        border-collapse: separate;
-        border-spacing: 0 .5rem;
-        tbody {
-            background-color: transparent;
-            tr {
-                background-color: $bg-color;
-                position: relative;
-
-                @each $color,
-                $val in $palette {
-                    &.bg-#{"" + $color} {
-                        background-color: $val;
-                    }
-                    &.text-#{"" + $color} {
-                        color: $val;
-                    }
-                }
-
-                td {
-                    border-top: none;
-
-                    @include media-breakpoint-up($collapse-breakpoint) {
-                        &:first-of-type {
-                            padding-left: .5rem;
-                        }
-
-                        &:last-of-type {
-                            padding-right: .5rem;
-                        }
                     }
                 }
             }
