@@ -1,6 +1,6 @@
 @use '../' as *;
 
-@mixin menus($active-color: map-get($preset-palette, "secondary"), $f-size: 14px, $f-weight: bold, $dd-text-align: center, $dd-items-padding: 0.25rem .5rem){
+@mixin menus($active-color: map-get($preset-palette, "secondary"), $f-size: 14px, $f-weight: bold, $dd-text-align: center, $dd-items-padding: 0.25rem .5rem, $dd-width: 80px){
     display: flex;
     @include reset-ul;
     //generic menu

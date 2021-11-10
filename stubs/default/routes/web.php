@@ -21,7 +21,6 @@ Route::group([
     'as' => 'layouts.'
     ], function(){
         Route::view('/list', 'demo-pages/list')->name('list');
-        Route::view('/show', 'demo-pages/show')->name('show');
 }); 
 
 Route::group([

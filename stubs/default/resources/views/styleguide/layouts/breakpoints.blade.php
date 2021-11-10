@@ -21,8 +21,7 @@
                      sm: 480px,
                      md: 764px,
                      lg: 1024px,
-                     xl: 1170px,
-                     xxl: 1400px
+                     xl: 1400px,
                      ) !default;"
             }}  
             </code>

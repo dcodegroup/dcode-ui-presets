@@ -75,7 +75,7 @@
     </div>
     <hr>
     <h3>Code Example</h3>
-    <p>Below is the @flex-cols settings used for the demo:</p>
+    <p>The breakpoint added to flex cols will set the min width value for the mixin. Below is the @flex-cols settings used for the demo:</p>
     <div class="demo">
         <pre>
             <code>

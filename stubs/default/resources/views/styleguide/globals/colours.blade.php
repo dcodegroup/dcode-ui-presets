@@ -48,8 +48,8 @@
                 <p class="text-dark-gray">Dark Gray</p>
             </div>
             <div class="colour-block">
-                <div class="bg-black"></div>
-                <p class="text-black">Black</p>
+                <div class="bg-blackest"></div>
+                <p class="text-blackest">Black</p>
             </div>
             <div class="colour-block bg-dark-gray">
                 <div class="bg-light-gray"></div>
@@ -59,9 +59,9 @@
                 <div class="bg-off-white"></div>
                 <p class="text-off-white">Off White</p>
             </div>
-            <div class="colour-block bg-black">
-                <div class="bg-white"></div>
-                <p class="text-white">White</p>
+            <div class="colour-block bg-blackest">
+                <div class="bg-whitest"></div>
+                <p class="text-whitest">White</p>
             </div>
         </div>
     </div>

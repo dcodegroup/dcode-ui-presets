@@ -4,30 +4,36 @@
 @use './palette.scss' as *;
 @use './fonts/inter.scss' as *;
 
-$font-family: 'graphik', sans-serif;
+$font-family: 'inter', sans-serif;
 
 @mixin body-font-regular {
     font-family: $font-family;
-    font-weight: 400;
+    font-weight: 500;
+}
+@mixin body-font-semi-bold {
+    font-family: $font-family;
+    font-weight: 600;
 }
 @mixin body-font-bold {
     font-family: $font-family;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 @mixin heading-font-regular {
     @include body-font-regular;
 }
+@mixin heading-font-semi-bold {
+    @include body-font-semi-bold;
+}
 @mixin heading-font-bold {
     @include body-font-bold;
 }
-
 @mixin font-color {
     color: $text-0;
 }
 
 @mixin h1($with-margins: false) {
-    @include heading-font-bold;
+    @include heading-font-semi-bold;
     @include font-color;
     @include clamp(38, 59);
     @include clamp(5, 9, 'letter-spacing');
@@ -154,4 +160,14 @@ h6 {
 a,
 button {
     @include states($text-2, $text-1);
+}
+
+dl {
+    dt {
+        margin-top: 1rem;
+        color: map-get($palette, 'secondary');
+    }
+    dd {
+        margin: 0 0 1rem 0;   
+    }
 }

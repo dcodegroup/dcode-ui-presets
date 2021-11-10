@@ -7,10 +7,9 @@
         $tab-padding: 0 1.25rem .75rem,
         $tab-panel-padding: 1rem,
     ) {
-    overflow-x: hidden;
     > ul {
         @include hrs;
-        overflow-x: scroll;
+        overflow-x: auto;
         &::-webkit-scrollbar {
             height: 8px;
         }
