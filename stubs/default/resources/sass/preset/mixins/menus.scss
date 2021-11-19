@@ -35,6 +35,7 @@
         }
         > ul {
             @include dropdown($dd-items-padding);
+            min-width: $dd-width;
             li {
                 text-align: $dd-text-align;
             }

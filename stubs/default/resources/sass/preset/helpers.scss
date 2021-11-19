@@ -33,17 +33,17 @@ $preset-palette: (
     box-shadow: 0px 0px 6px -4px $color;
 }
 
-@mixin dropdown($dd-items-padding: 0.25rem .5rem, $bgColor: #fff, $hoverColor: grey) {
+@mixin dropdown($dd-items-padding: 0.25rem .5rem, $bgColor: #fff, $ddWidth: 80px, $hoverColor: grey) {
     @include reset-ul;
     background-color: $bgColor;
     border-radius: 4px;
     @include box-shadow;
     height: 0px;
-    min-width: 80px;
+    min-width: $ddWidth;
     opacity: 0;
     overflow: hidden;
     position: absolute;
-    transition: border-color 1s, opacity 1s;
+    transition: border-color 1s, opacity 1s, height .3s;
     z-index: 1;
 
     &.right {
