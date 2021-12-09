@@ -18,10 +18,10 @@ class DcodePreset extends Preset
         'axios' => '^0.21',
         'vue-loader' => '^15.9.6',
         'vue-template-compiler' => '^2.6',
-        'vue'=> '^2.6',
-        'vue2-datepicker'=>'^3.10.3',
-        '@dcodegroup-au/vuetable-3'=>'^4.0.2',
-        'v-click-outside'=>'^3.1.2'
+        'vue' => '^2.6',
+        'vue2-datepicker' => '^3.10.3',
+        '@dcodegroup-au/vuetable-3' => '^4.0.2',
+        'v-click-outside' => '^3.1.2',
     ];
 
     const NPM_PACKAGES_TO_REMOVE = [
