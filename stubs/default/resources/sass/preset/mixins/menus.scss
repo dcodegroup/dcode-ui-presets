@@ -12,7 +12,7 @@
         > button {
             line-height: 1;
             text-decoration: none; 
-            transition: color 1s;  
+            transition: color .3s;  
             font-size: $f-size; 
             font-weight: $f-weight;
             &:hover {
@@ -35,7 +35,6 @@
         }
         > ul {
             @include dropdown($dd-items-padding);
-            min-width: $dd-width;
             li {
                 text-align: $dd-text-align;
             }

@@ -1,6 +1,8 @@
 $palette: (
     primary: #1779ba,
     secondary: #767676,
+    tertiary: #3770EF,
+
     success: #3adb76,
     warning: #ffae00,
     danger: #cc4b37,
@@ -11,6 +13,11 @@ $palette: (
     dark-gray: #8a8a8a,
     blackest: #0a0a0a,
     off-white: #f8f8f8,
+
+    accepted: #3adb76,
+    sent: #3770EF,
+    draft: #8a8a8a,
+    declined: #D5D6D7,
 );
 
 $bg-1: map-get($palette, "whitest");

@@ -1,7 +1,7 @@
 @use '../'as *;
 
-@mixin input-common($input-border: 1px solid, $radius: 4px, $padding: 1rem, $placeholder-color: grey) {
-    background-color: transparent;
+@mixin input-common($input-border: 1px solid, $radius: 4px, $padding: 1rem, $placeholder-color: grey, $bg: transparent) {
+    background-color: $bg;
     border: $input-border;
     border-radius: $radius;
     padding: .75rem;
@@ -11,12 +11,13 @@
     &::placeholder {
         color: $placeholder-color;
     }
+    &[disabled] {
+        cursor: not-allowed;
+    }
     &:focus {
         outline: none;
     }
 }
-
-
 @mixin forms($form-error: map-get($preset-palette, 'danger')) {
     > div,
     > fieldset > div {

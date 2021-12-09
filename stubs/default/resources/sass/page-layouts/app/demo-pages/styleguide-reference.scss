@@ -4,7 +4,6 @@
     grid-template-rows: auto;
     grid-gap: 40px;
     grid-template-areas: "aside content";
-
     > aside {
         menu {
             position: fixed;
@@ -14,7 +13,6 @@
         > div,
         hr {
             margin-bottom: 50px;
- 
         }
     }
 }

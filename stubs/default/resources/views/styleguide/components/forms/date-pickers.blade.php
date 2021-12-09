@@ -6,28 +6,22 @@
         'devReady' => false,
     ])
     <div class="content">
-        <h3>Date Pickers</h3>
-        <p>Included is the generic date input.</p>
+        <h3>Vue Date Pickers</h3>
+        <p>We have created a wrapper for the Vue 2 Datepicker which has a hidden input to help with sending form submissions in blades. More details about the package can be found <a href="https://github.com/mengxiong10/vue2-datepicker" target="blank">here</a>.</p>
         <hr>
         <h3>HTML Demo</h3>
         <div class="demo">
-            <form action="#" method="post">
-                <div>
-                    <label for="start_date">Start Date</label>
-                    <input type="date" id="start_date" />
-                </div>
-            </form>
+            <v-date-picker name="due_date" value="{{ Carbon\Carbon::now() }}"></v-date-picker>
         </div>
         <hr>
         <h3>Code Example</h3>
         <div class="demo">
             <pre>
                 <code>
-   
+                    {{ "<v-date-picker name=\"due_date\" value=\"{\{ Carbon\Carbon::now() }\}\"></v-date-picker>" }}
                 </code>
             </pre>
         </div>
     </div>
 @endsection
 
-{{-- ToDo: Do we add vue-datepicker for this input? --}}

@@ -1,0 +1,78 @@
+@use '../../../config/palette.scss' as *;
+@use '../../../config/variables.scss' as *;
+
+@use '../../../preset/mixins/forms.scss' as *;
+
+@import '~selectize/dist/css/selectize.default.css'; // This is required, we use the same css as selectize.js
+body {
+    .selectize-control {
+        // max-height: 44px;
+
+        &.single .selectize-input,
+        .selectize-input {
+            @include input-common($input-border, $input-radius, $input-padding, $placeholder-color);
+            background-image:none;
+            box-shadow: none;
+            display: inline-flex;
+            align-items: center;
+
+            > input {
+                width: 100%;
+                &::placeholder {
+                    font-size: 15px;
+                }
+            }
+            &.focus {
+                box-shadow: none;
+            }
+            
+            &.dropdown-active {
+                border-radius: $input-radius $input-radius 0 0;
+            }
+        }
+
+        &.single{
+            .item {
+                font-size: 15px;
+                color: #000;
+            }
+        }
+    }
+
+    .selectize-dropdown {
+        // z-index: 10;
+        border: $input-border;
+        margin: 0;
+        box-shadow: none; 
+        border-radius: 0 0 $input-radius $input-radius;
+        top: calc(100% - .15rem);
+
+        [data-selectable].option {
+            cursor: pointer;
+        }
+
+        .option {
+            &:last-child {
+                border-radius: 0 0 $input-radius $input-radius;
+            }
+        }
+    }
+
+    .selectize-control.multi {
+        .selectize-input {
+            [data-value] {
+                text-shadow: none;
+                border-radius: 4px;
+                background-color: map-get($palette, "tertiary");
+                background-image: none;
+            }
+            > div {
+                border: 1px solid map-get($palette, "tertiary");
+                display: flex;
+                flex-direction: column;
+                 height: 30px;
+                justify-content: center;
+            }
+        } 
+    }
+}

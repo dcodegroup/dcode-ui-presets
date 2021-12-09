@@ -9,8 +9,6 @@
         </header>
         <nav>
             <ul class="vertical">
-                {{-- <li><a href="">Getting Started</a><li> --}}
-                {{-- <li><a href="">Design Guidelines</a><li> --}}
                 <li>
                     <button>Globals</button>
                     <ul>
@@ -53,10 +51,19 @@
                             <a href="{{ route('styleguide.components.forms.checkbox-btn-groups') }}">Checkbox Button Groups</a>
                         </li>
                         <li>
+                            <a href="{{ route('styleguide.components.forms.date-pickers') }}">Date Pickers</a>
+                        </li>
+                        <li>
                             <a href="{{ route('styleguide.components.forms.search-inputs') }}">Search Inputs</a>
                         </li>
                         <li>
                             <a href="{{ route('styleguide.components.forms.select-filters') }}">Select Filters</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('styleguide.components.modals') }}">Modals</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('styleguide.components.forms.multi-select') }}">Multi Selects</a>
                         </li>
                         <li>
                             <a href="{{ route('styleguide.components.navs') }}">Navigation</a>
@@ -72,6 +79,9 @@
                         </li>
                         <li>
                             <a href="{{ route('styleguide.components.tiles') }}">Tiles</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('styleguide.components.side-panels') }}">Side Panels</a>
                         </li>
                     </ul>
                 </li>
@@ -101,4 +111,6 @@
         @endisset
     </section>
 </main>
+ <modal></modal>
+<side-panel></side-panel>
 @endsection

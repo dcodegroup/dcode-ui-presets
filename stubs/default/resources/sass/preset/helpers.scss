@@ -33,17 +33,17 @@ $preset-palette: (
     box-shadow: 0px 0px 6px -4px $color;
 }
 
-@mixin dropdown($dd-items-padding: 0.25rem .5rem, $bgColor: #fff, $ddWidth: 80px, $hoverColor: grey) {
+@mixin dropdown($dd-items-padding: 0.25rem .5rem, $bgColor: #fff, $hoverColor: #f5f5f5) {
     @include reset-ul;
     background-color: $bgColor;
     border-radius: 4px;
     @include box-shadow;
     height: 0px;
-    min-width: $ddWidth;
+    min-width: 80px;
     opacity: 0;
     overflow: hidden;
     position: absolute;
-    transition: border-color 1s, opacity 1s, height .3s;
+    transition: border-color 1s, opacity 1s;
     z-index: 1;
 
     &.right {
@@ -58,14 +58,18 @@ $preset-palette: (
         font-size: 14px;
         line-height: 1;
         margin: 0;        
-        a, button {        
+        a, button {     
+            background-color: transparent;     
             display: inline-block;
             padding: $dd-items-padding;
             text-decoration: none;    
-            transition: color 1s, background-color 1s;
+            transition: color .3s, background-color .3s;
             width: 100%;
+            svg path {
+                fill: currentColor;
+                transition: fill .3s;
+            }
             &:hover {
-                color: $bgColor;
                 background-color: $hoverColor;
             }
         }
@@ -114,7 +118,7 @@ $preset-palette: (
     }
 }
 
-@mixin states($color: grey, $hoverColor: lightgray) {
+@mixin states($color: grey, $hoverColor: darkgray) {
     &, &:link, &:visited {
         color: $color;
         transition: color 0.2s linear;

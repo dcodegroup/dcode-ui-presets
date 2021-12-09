@@ -22,7 +22,6 @@
             font-weight: 500;
         }
     }
-
     p, li, a, button {
         &:not(.demo p, .demo li, .demo a, .demo button) {
             color: $dcode-navy;            

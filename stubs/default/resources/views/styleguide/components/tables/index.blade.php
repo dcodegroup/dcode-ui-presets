@@ -224,6 +224,60 @@
           @endfor
         </tbody>
     </table>
-    </div>
+  </div>
+  <hr>
+  <h3>Vue 3 Tables</h3>
+  <p>Generic Vue 3 tables should not need additional classes.</p>
+  <p>To cater for responsive layouts, a dataClass array key is included in the fields array prop so <code>&lt;td&gt;</code> elements have a cotenxtual label.</p>
+  <hr>
+  <h3>HTML Demo</h3>
+  <div class="demo">
+    @php 
+    $fields = [
+      (object)[
+        'name'=>'job_number',
+        'sortField'=>true,
+        'title'=>'Job Number',
+        'dataClass'=>'-data-Job-Number'
+      ],
+      (object)[
+        'name'=>'title',
+        'sortField'=>true,
+        'title'=>'Title',
+        'dataClass'=>'-data-Title'
+      ],
+      (object)[
+        'name'=>'client',
+        'sortField'=>true,
+        'title'=>'Client',
+        'dataClass'=>'-data-Client'
+      ],
+      (object)[
+        'name'=>'location',
+        'sortField'=>true,
+        'title'=>'Location',
+        'dataClass'=>'-data-Location'
+      ],
+      (object)[
+        'name'=>'amount',
+        'sortField'=>true,
+        'title'=>'Amount',
+        'dataClass'=>'-data-Amount'
+      ],
+      (object)[
+        'name'=>'status',
+        'sortField'=>true,
+        'title'=>'Status',
+        'dataClass'=>'-data-Status'
+      ],
+      (object)[
+        'name'=>'actions',
+        'sortField'=>false,
+        'title'=>'',
+        'dataClass'=>'actions'
+      ],
+    ];@endphp
+    <base-table get-url="{{ route('styleguide.api.table-demo') }}" :fields="{{json_encode($fields)}}"></base-table>
+  </div>
 </div>
 @endsection

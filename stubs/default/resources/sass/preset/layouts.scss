@@ -70,6 +70,12 @@ html {
     display: flex;
     align-items: center;
 }
+
+@mixin align-justify-center-column {
+    @include align-center;
+    flex-direction: column;
+    justify-content: center;
+}
 @mixin space-between {
     display: flex;
     justify-content: space-between;
@@ -123,5 +129,8 @@ html {
         &.-no-max {
             grid-template-columns: repeat(auto-fit, #{$i * 50}px);
         }
+    }
+    .h-#{$i * 10} {
+        height: #{$i * 10%};
     }
 }

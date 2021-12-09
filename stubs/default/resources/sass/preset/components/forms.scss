@@ -4,7 +4,7 @@
 @use '../../config/variables.scss' as *;
 
 #{$inputs}{
-    @include input-common($input-border, $input-radius, $input-padding, $placeholder-color);
+    @include input-common($input-border, $input-radius, $input-padding, $placeholder-color, $input-bg);
     @if (mixin-exists('input-settings')) {
         @include input-settings;
     }

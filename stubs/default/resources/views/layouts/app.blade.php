@@ -10,4 +10,6 @@
         {{ $slot }}
     @endisset
 </main>
+<modal></modal>
+<side-panel></side-panel>
 @endsection

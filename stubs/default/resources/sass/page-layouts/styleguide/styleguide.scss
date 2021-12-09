@@ -70,7 +70,7 @@
         > .content {
             padding: 3rem 2rem;
             
-            hr {
+            hr:not(.actions hr) {
                 margin: 3rem 0;
             }
             

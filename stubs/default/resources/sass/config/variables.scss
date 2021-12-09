@@ -18,6 +18,7 @@ $card-header-f-size: 14px;
 
 //standard input settings
 $input-border: 1px solid map-get($palette, 'blackest');
+$input-bg: #fff; 
 $input-radius: $radius;
 $input-padding: .75rem;
 $placeholder-color: map-get($palette, 'medium-gray');
@@ -69,6 +70,14 @@ $menu-f-weight: bold;
 $dd-text-align: center;
 $dd-items-padding: 0.5rem 0.75rem;
 $dd-width: 100px;
+
+//modals
+$window-bg: rgba(0,0,0,.4);
+$modal-width: 42rem;
+$modal-radius: $card-border-radius;
+
+//side panel
+$panel-width: 600px;
 
 //button settings
 // $base-buttons: (

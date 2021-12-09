@@ -7,7 +7,6 @@
         @include flex-cols(md);
         @include flex-cols(lg);
         @include flex-cols(xl);
-
         > div {
             background-color: $dcode-turquoise;
             border: 1px solid #fff;

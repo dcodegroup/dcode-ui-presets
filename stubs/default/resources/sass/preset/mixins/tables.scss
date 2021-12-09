@@ -36,7 +36,6 @@
         tr {
             background-color: $bg-color;
             position: relative;
-
             &[data-href] {
                 cursor: pointer;
                 transition: background-color .3s;
@@ -44,7 +43,6 @@
                     background-color: rgba($border-color, .9);
                 }
             }
-
             @each $color,
             $val in $palette {
                 &.bg-#{"" + $color} {

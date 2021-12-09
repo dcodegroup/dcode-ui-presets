@@ -1,0 +1,135 @@
+@use '../../../preset'as *;
+@use '../../../preset/mixins/tables.scss'as *;
+
+@use '../../../config/palette.scss'as *;
+@use '../../../config/variables.scss'as *;
+
+table {
+    &:not(.mx-table-date) {
+        @include tables($table-bg,
+            $table-border,
+            $palette,
+            $table-header-color,
+            $table-collapse-breakpoint,
+        );
+        tbody {
+            tr {
+                td {
+                    border-top: none;
+                    vertical-align: top;
+                    &.actions {
+                        width: 30px;
+                        @include ellipsis;
+                        > div {
+                            max-width: 30px;
+                            margin-left: auto;
+                            position: relative;
+                            > button {
+                                @include reset-btn;
+                                color: $text-faint;
+                                display: inline-block;
+                                font-size: 1.5rem;
+                                line-height: 0;
+                                vertical-align: text-top;
+                                &.active {
+                                    + ul {
+                                        opacity: 1;
+                                        overflow: visible;
+                                        padding: 0.25rem 0 .5rem;
+                                        height: auto;
+                                    }
+                                }
+                            }
+                            > ul {
+                                right: 0;
+                                width: 160px;
+                                @include dropdown;
+                                &::after {
+                                    content: '';
+                                    background-color: map-get($palette, 'whitest');
+                                    border-left: 2px solid rgba(map-get($palette, 'light-gray'), .5);
+                                    border-top: 1px solid rgba(map-get($palette, 'light-gray'), .5);
+                                    height: 10px;
+                                    position: absolute;
+                                    right: 18px;
+                                    top: -6px;
+                                    transform: rotate(45deg);
+                                    width: 10px;
+                                    z-index: 11;
+                                }
+                                hr {
+                                    margin: 10px 0 5px;
+                                }
+                                h4 {
+                                    font-size: 1rem;
+                                    line-height: 1;
+                                    margin: 0;
+                                    padding: 0.75rem .75rem .5rem;
+                                }
+                                li {
+                                    button {
+                                        @include reset-btn;
+                                        padding: 0.5rem 0.75rem;
+                                        text-align: left;
+                                    }
+                                    a {
+                                        padding: 0.5rem 0.75rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    @include media-breakpoint-up('lg') {
+                        &:first-of-type {
+                            padding-left: .75rem;
+                        }
+                        &:last-of-type {
+                            padding-right: .75rem;
+                        }
+                    }
+                    img {
+                        &.square-thumb {
+                            border-radius: 4px;
+                            height: 30px;
+                            width: 30px;
+                        }
+                    }
+                    > menu {
+                        margin: 0;
+                        padding: 0;
+                        > ul > li {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// .financial-totals {
+//     display: flex;
+//     @include media-breakpoint-down('md') {
+//         flex-direction: column;
+//     }
+//     > div {
+//         &:first-child {
+//             width: calc((2 / 3) * 100%);
+//             @include media-breakpoint-down('md') {
+//                 margin: 2rem 0;
+//                 width: 100%;
+//             }
+//         }
+//         &:nth-child(2){
+//             width: calc(100 / 3) * 1%;
+//             @include media-breakpoint-down('md') {
+//                 width: 100%;
+//             }
+//             h2, h4 {
+//                 display: flex;
+//                 span {
+//                     width: 50%;
+//                 }
+//             }
+//         }
+//     }
+// }

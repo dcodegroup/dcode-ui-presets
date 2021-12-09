@@ -25,7 +25,9 @@
                 <li><a href="#tabs">Tabs</a></li>
                 <li><a href="#tags">Tags</a></li>
                 <li><a href="#tiles">Tiles</a></li>
-
+                <li><a href="#modals">Modals</a></li>
+                <li><a href="#side-panels">Side Panels</a></li>
+                <li><a href="#date-pickers">Date Pickers</a></li>
             </ul>
         </menu>
     </aside>
@@ -560,7 +562,6 @@
         <hr>
         <div>
             <h3><a name="tiles">Tiles</a></h3>
-
             <div class="tile">
                 <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptatum!</small>
             </div>
@@ -580,6 +581,21 @@
                 <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, quisquam.</small>
             </div>
         </div>
+        <hr>
+        <div>
+            <h3><a name="modals">Vue Modals</a></h3>
+            <delete-modal-trigger></delete-modal-trigger>
+        </div>
+        <hr>
+        <div>
+            <h3><a name="side-panels">Vue Side Panels</a></h3>
+            <job-panel-trigger></job-panel-trigger>
+         </div>
+         <hr>
+         <div>
+            <h3><a name="date-pickers">Vue Date Pickers</a></h3>
+            <v-date-picker name="due_date" value="{{ Carbon\Carbon::now() }}"></v-date-picker>
+        </div>
     </section>
 </div>
-@endsection
+ @endsection
