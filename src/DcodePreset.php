@@ -19,7 +19,7 @@ class DcodePreset extends Preset
         'vue' => '^2.6',
         'vue2-datepicker' => '^3.10.3',
         '@dcodegroup-au/vuetable-3' => '^4.0.2',
-        '@dcodegroup-au/vue-multiselect' => '^0.0.3',
+        '@dcodegroup-au/vue-multiselect' => '^0.0.6',
         'v-click-outside' => '^3.1.2',
     ];
 
