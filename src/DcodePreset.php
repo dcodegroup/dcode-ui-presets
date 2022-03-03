@@ -9,8 +9,6 @@ use Laravel\Ui\Presets\Preset;
 class DcodePreset extends Preset
 {
     const NPM_PACKAGES_TO_ADD = [
-        '@isneezy/vue-selectize' => '^0.6.1',
-        'selectize' => '^0.12.6',
         'resolve-url-loader' => '^3.1',
         'sass' => '^1.32',
         'sass-loader' => '^8.0',
@@ -21,6 +19,7 @@ class DcodePreset extends Preset
         'vue' => '^2.6',
         'vue2-datepicker' => '^3.10.3',
         '@dcodegroup-au/vuetable-3' => '^4.0.2',
+        '@dcodegroup-au/vue-multiselect' => '^0.0.3',
         'v-click-outside' => '^3.1.2',
     ];
 

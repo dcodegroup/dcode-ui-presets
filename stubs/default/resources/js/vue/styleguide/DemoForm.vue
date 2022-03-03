@@ -57,21 +57,6 @@
                     <span class="checkbox"></span>
                 </template>
             </input-wrapper>
-            <input-wrapper
-                :form="form"
-                field="roles"
-                label-text="demo.labels.roles"
-            >
-                <v-selectize
-                    v-model="selectedRoles"
-                    :options="getRoles"
-                    multiple
-                    key-by="id"
-                    label="name"
-                    :keys="['name']"
-                >
-                </v-selectize>
-            </input-wrapper>
         </fieldset>
         <footer>
             <a href="#" class="button -hollow">{{ $t("generic.buttons.cancel")}}</a>
@@ -80,10 +65,8 @@
     </form>
 </template>
 <script>
-import VSelectize from "@isneezy/vue-selectize";
 export default {
     name: "StoreUser",
-    components: { VSelectize },
     props: {
         resource: {
             type: Object,
@@ -102,13 +85,6 @@ export default {
     },
     data() {
         return {
-            roles: [
-                {"id":1,"name":"super admin"},
-                {"id":2,"name":"admin"},
-                {"id":3,"name":"staff"},
-                {"id":4,"name":"contractor"},
-                {"id":5,"name":"manager"},
-            ],
             form: new Form(
                 {
                     _method: this.method,
@@ -119,27 +95,26 @@ export default {
                     phone: this.resource.phone,
                     start_date: this.resource.start,
                     end_date: this.resource.end,
-                    roles: [],
                 },
                 {
                     resetOnSuccess: false,
                 }
             ),
-            selectedRoles: this.resource.active_roles ?? [],
+            // selectedRoles: this.resource.active_roles ?? [],
         };
     },
-    computed: {
-        getRoles: function () {
-            return this.roles.filter((role) => {
-                return !this.selectedRoles.find((element) => {
-                    return element.id === role.id;
-                });
-            });
-        },
-    },
+    // computed: {
+    //     getRoles: function () {
+    //         return this.roles.filter((role) => {
+    //             return !this.selectedRoles.find((element) => {
+    //                 return element.id === role.id;
+    //             });
+    //         });
+    //     },
+    // },
     methods: {
         onSubmit() {
-            this.form.roles = this.selectedRoles.map((role) => role.id);
+            // this.form.roles = this.selectedRoles.map((role) => role.id);
             if (this.form.processing) {
                 return;
             }
