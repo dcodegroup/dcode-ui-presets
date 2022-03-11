@@ -13,5 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')->name('home');
-Route::view('kitchen-sink', 'demo-pages/kitchen-sink')->name('kitchen-sink');
+Route::view('/', 'demo-pages/kitchen-sink')->name('kitchen-sink');

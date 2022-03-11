@@ -14,64 +14,87 @@ html {
 #demo-pages {
     @include bg-text-colors($palette);
     margin: 0;
-    #app {
-        @include space-between;
-        align-items: flex-start;
-        background-color: map-get($palette, 'off-white');
-        > aside {
-            @include aside-menu;
-            background-color: $sidebar-bg;
-            border-right: 1px solid #E1E7EC;
-            padding-left: 10px;
-            padding-top: 10px;
+
+    .cols-of-150 {
+        @include cols-of(150px, 1000px, 1rem);
+    }
+    .colour-block {
+        border: 1px solid map-get($palette, "dark-grey");
+        padding: 1rem;
+        > div {
+            min-height: 100px;
+            margin-bottom: 1rem;
         }
-        section{
-            width: 100%;
-            > header {
-                padding: 1rem 0;
-                > div {
-                    @include space-between-center;
-                    margin: auto;
-                    max-width: $body-max-width;
-                    h1 {
-                        margin:0;
-                        span {
-                            display: none;
-                        }
-                    }
-                    nav ul li a {
-                        color: map-get($palette, 'tertiary');
-                    }
+    }
+    hr {
+        margin: 20px 0;
+    }
+    #app {
+        > main {
+            display: flex;
+            align-items: flex-start;
+            background-color: map-get($palette, 'off-white');
+            > aside {
+                @include aside-menu;
+                background-color: $sidebar-bg;
+                padding-left: 20px;
+                padding-top: 40px;
+                height: 100vh;
+                width: 300px;
+                ul {
+                    position: fixed;
                 }
             }
-            > main {
-                min-height: 100vh;
-                padding: 1rem 0;
-                > div {
-                    margin: auto;
-                    max-width: $body-max-width;
-                    header.refine {
+            > section{
+                max-width: 1100px;
+                width: 100%;
+                padding: 40px;
+                > header {
+                    padding: 1rem 0;
+                    > div {
                         @include space-between-center;
-                        margin-bottom: 2rem;
-                        .form  {
-                            @include space-between;
-                            > * {
-                                margin-right: .5rem;
+                        margin: auto;
+                        max-width: $body-max-width;
+                        h1 {
+                            margin:0;
+                            span {
+                                display: none;
                             }
-                            .checkbox-btn span {
-                                padding: 0.65rem 1rem;
-                            }
-                            .checkbox-btn,
-                            p {
-                                margin-bottom: 0;
-                            }
-                            &:first-of-type {
-                                > div {
-                                    margin-right: 2rem;
+                        }
+                        nav ul li a {
+                            color: map-get($palette, 'tertiary');
+                        }
+                    }
+                }
+                > main {
+                    min-height: 100vh;
+                    padding: 1rem 0;
+                    > div {
+                        margin: auto;
+                        max-width: $body-max-width;
+                        header.refine {
+                            @include space-between-center;
+                            margin-bottom: 2rem;
+                            .form  {
+                                @include space-between;
+                                > * {
+                                    margin-right: .5rem;
                                 }
-                            }
-                            .select-filter-input p {
-                                background-color: map-get($palette, "whitest");
+                                .checkbox-btn span {
+                                    padding: 0.65rem 1rem;
+                                }
+                                .checkbox-btn,
+                                p {
+                                    margin-bottom: 0;
+                                }
+                                &:first-of-type {
+                                    > div {
+                                        margin-right: 2rem;
+                                    }
+                                }
+                                .select-filter-input p {
+                                    background-color: map-get($palette, "whitest");
+                                }
                             }
                         }
                     }
