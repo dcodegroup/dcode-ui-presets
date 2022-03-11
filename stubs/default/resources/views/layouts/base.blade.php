@@ -12,14 +12,15 @@
 		<link rel="shortcut icon" href="{{ url(asset('/imgs/logos/dcode.svg')) }}" type="image/svg">
         <!-- Styles -->
         <link rel="stylesheet" href="{{ url(mix('css/app.css')) }}">
-        <!-- Scripts -->
-        <script src="{{ url(mix('js/app.js')) }}" defer></script>
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-    </head>
+        <!-- ToDo: Add LARAVEL Kanopi Sidebar Tag -->
+     </head>
     <body {{isset($bodyId) ? "id=$bodyId" : null }}>
         <div id="app">
             @yield('body')
         </div>
+        <!-- Scripts -->
+        <script src="{{ url(mix('js/app.js')) }}" defer></script>
     </body>
 </html>

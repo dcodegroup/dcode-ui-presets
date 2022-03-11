@@ -1,64 +1,79 @@
-@use '../../../preset/' as *;
-@use '../../../config/variables.scss' as *;
-@use '../../../config/palette.scss' as *;
-@use '../../../config/typography.scss' as *;
-@forward './styleguide-reference.scss';
+@use 'dcode/sass-lib/sass/layouts.scss' as *;
+@use 'dcode/sass-lib/sass/admin-features/helpers.scss' as *;
+@use 'dcode/sass-lib/sass/layouts.scss' as *;
+
+@use '~/sass/config/variables.scss' as *;
+@use '~/sass/config/palette.scss' as *;
+@use '~/sass/config/typography.scss' as *;
+@use '~/sass/config/mixins.scss' as *;
 
 html {
     scroll-behavior: smooth;
 }
 
-#demo-pages #app{
-    > header {
-        padding: 1rem 0;
-        > div {
-            margin: auto;
-            max-width: $body-max-width;
-            @include space-between-center;
-            @include media-breakpoint-down('xl') {
-                padding: 0 1rem;
-            }
-            h1 {
-                margin:0;
-                span {
-                    display: none;
-                }
-            }
+#demo-pages {
+    @include bg-text-colors($palette);
+    margin: 0;
+    #app {
+        @include space-between;
+        align-items: flex-start;
+        background-color: map-get($palette, 'off-white');
+        > aside {
+            @include aside-menu;
+            background-color: $sidebar-bg;
+            border-right: 1px solid #E1E7EC;
+            padding-left: 10px;
+            padding-top: 10px;
         }
-    }
-    > main {
-        background-color: map-get($palette, "light-gray");
-        min-height: 100vh;
-        padding: 1rem 0;
-        > div {
-            margin: auto;
-            max-width: $body-max-width;
-            @include media-breakpoint-down('xl') {
-                padding: 0 1rem;
-            }
-            header.refine {
-                @include space-between-center;
-                margin-bottom: 2rem;
-                .form  {
-                    @include space-between;
-                    > * {
-                        margin-right: .5rem;
-                    }
-                    .checkbox-btn span {
-                        padding: 0.65rem 1rem;
-                    }
-                    .checkbox-btn,
-                    p {
-                        margin-bottom: 0;
-                    }
-                    &:first-of-type {
-                        > div {
-                            margin-right: 2rem;
+        section{
+            width: 100%;
+            > header {
+                padding: 1rem 0;
+                > div {
+                    @include space-between-center;
+                    margin: auto;
+                    max-width: $body-max-width;
+                    h1 {
+                        margin:0;
+                        span {
+                            display: none;
                         }
                     }
-                
-                    .select-filter-input p {
-                        background-color: map-get($palette, "whitest");
+                    nav ul li a {
+                        color: map-get($palette, 'tertiary');
+                    }
+                }
+            }
+            > main {
+                min-height: 100vh;
+                padding: 1rem 0;
+                > div {
+                    margin: auto;
+                    max-width: $body-max-width;
+                    header.refine {
+                        @include space-between-center;
+                        margin-bottom: 2rem;
+                        .form  {
+                            @include space-between;
+                            > * {
+                                margin-right: .5rem;
+                            }
+                            .checkbox-btn span {
+                                padding: 0.65rem 1rem;
+                            }
+                            .checkbox-btn,
+                            p {
+                                margin-bottom: 0;
+                            }
+                            &:first-of-type {
+                                > div {
+                                    margin-right: 2rem;
+                                }
+                            }
+                            .select-filter-input p {
+                                background-color: map-get($palette, "whitest");
+                            }
+                        }
                     }
                 }
             }

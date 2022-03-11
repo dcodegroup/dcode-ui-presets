@@ -1,1 +1,0 @@
-{{-- Do we add vue-multiselect for this input? --}}

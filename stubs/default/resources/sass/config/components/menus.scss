@@ -1,0 +1,12 @@
+@use 'dcode/sass-lib/sass/admin-features/mixins/menus.scss' as *;
+@use '../../config/variables.scss' as *;
+
+
+//need to add js to set active on menu els
+menu > ul,
+nav > ul {
+    @include menus($menu-active-color, $menu-f-size, $menu-f-weight, $dd-text-align, $dd-items-padding, $dd-width);
+    @if (mixin-exists('menu-settings')) {
+        @include menu-settings;
+    }
+}

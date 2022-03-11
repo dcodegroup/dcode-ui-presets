@@ -1,9 +1,0 @@
-@use '../../preset/mixins/modals.scss' as *;
-@use '../../config/variables.scss' as *;
-
-.modal-wrapper {
-    @include modal($window-bg, $modal-width, $modal-radius);
-    @if (mixin-exists('modal-settings')) {
-        @include modal-settings;
-    }
-}

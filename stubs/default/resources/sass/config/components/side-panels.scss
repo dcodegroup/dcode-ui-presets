@@ -1,0 +1,9 @@
+@use 'dcode/sass-lib/sass/admin-features/mixins/side-panels.scss' as *;
+@use '../../config/variables.scss' as *;
+
+.side-panel {
+    @include sidePanel($panel-width);
+    @if (mixin-exists('side-panel-settings')) {
+        @include side-panel-settings;
+    }
+}

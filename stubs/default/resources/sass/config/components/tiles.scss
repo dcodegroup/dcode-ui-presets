@@ -1,0 +1,10 @@
+@use 'dcode/sass-lib/sass/admin-features/mixins/tiles.scss' as *;
+@use '../../config/palette.scss' as *;
+@use '../../config/variables.scss' as *;
+
+.tile {
+    @include tiles($tile-color, $tile-radius, $tile-padding, $palette);
+    @if (mixin-exists('tile-settings')) {
+        @include tile-settings;
+    }
+}

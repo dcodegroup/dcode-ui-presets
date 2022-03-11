@@ -17,9 +17,10 @@ class DcodePreset extends Preset
         'vue-loader' => '^15.9.6',
         'vue-template-compiler' => '^2.6',
         'vue' => '^2.6',
-        'vue2-datepicker' => '^3.10.3',
+        "@dcodegroup-au/sass-lib" => "^0.0.6",
+        "@dcodegroup-au/vue-datepicker" => "^0.0.4",
+        "@dcodegroup-au/vue-multiselect" => "0.0.4",
         '@dcodegroup-au/vuetable-3' => '^4.0.2',
-        '@dcodegroup-au/vue-multiselect' => '^0.0.6',
         'v-click-outside' => '^3.1.2',
     ];
 
