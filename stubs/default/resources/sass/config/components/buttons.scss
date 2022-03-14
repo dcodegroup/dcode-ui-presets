@@ -1,0 +1,93 @@
+@use 'dcode/sass-lib/sass/admin-features/mixins/buttons.scss' as *;
+@use '../../config/variables.scss' as *;
+
+@function varients($map, $varient, $attribute) {
+    @if map-has-key($map, $varient) {
+        @return map-get(map-get($map, $varient), $attribute);
+    }
+    @warn "The key ´#{$varient} is not available in the map.";
+    @return null;
+}
+
+.button {
+    @include button-base($button-border-radius, $clickable-f-size, $button-padding);  
+    &:not(.-hollow){
+        @if (variable-exists('base-buttons')) {
+            @include button-common-states(map-values($base-buttons)...);
+        } @else {
+            @include button-common-states;
+        } 
+        @if (variable-exists('buttons-variants')) {
+            @each $key, $val in $buttons-variants {
+                @if map-has-key($buttons-variants, $key) {
+                    &.#{$key} {
+                        @include button-common-states(
+                        varients($buttons-variants, $key, color),
+                        varients($buttons-variants, $key, hover-color),
+                        varients($buttons-variants, $key, bg-color)
+                        );
+                    }
+                }
+            }
+        }
+    }
+    &.sml {
+        @if (variable-exists('button-small')) {
+            @include button-sml(map-values($button-small)...);
+        } @else {
+            @include button-sml;
+        }
+    }
+    &.-hollow {
+        @include button-hollow;
+        @if (variable-exists('base-hollow-buttons')) {
+            @include button-hollow-states(map-values($base-hollow-buttons)...);
+        }
+        @if (variable-exists('buttons-variants')) {
+            @each $key, $val in $buttons-variants {
+                @if map-has-key($buttons-variants, $key) {
+                    &.-#{$key} {
+                        @include button-hollow-states(
+                        varients($buttons-variants, $key, bg-color),
+                        );
+                    }
+                }
+            }
+        }
+    }
+    @include btn-with-icon($clickable-f-size); 
+}
+
+.btn-group {
+    display: inline-flex;
+    label.checkbox-btn,
+    label.radio-btn {
+        margin-right: 1px;
+        input + span {
+            border-radius: 0;
+        };
+        &:first-of-type {
+             input + span {
+                border-radius: $button-border-radius 0 0 $button-border-radius;
+            }
+        }
+        &:last-of-type {
+            margin-right: 0;
+            input + span {
+                border-radius: 0 $button-border-radius $button-border-radius 0;
+            }
+        }
+    }
+    .button {
+        border-radius: 0;
+        &:last-of-type {
+            border-radius: 0 $button-border-radius $button-border-radius 0;
+        }
+        &:first-of-type {
+            border-radius: $button-border-radius 0 0 $button-border-radius;
+        }
+        &:not(:last-child) {
+            margin-right: 1px;
+        }
+    }
+}

@@ -9,8 +9,6 @@ use Laravel\Ui\Presets\Preset;
 class DcodePreset extends Preset
 {
     const NPM_PACKAGES_TO_ADD = [
-        '@isneezy/vue-selectize' => '^0.6.1',
-        'selectize' => '^0.12.6',
         'resolve-url-loader' => '^3.1',
         'sass' => '^1.32',
         'sass-loader' => '^8.0',
@@ -19,7 +17,9 @@ class DcodePreset extends Preset
         'vue-loader' => '^15.9.6',
         'vue-template-compiler' => '^2.6',
         'vue' => '^2.6',
-        'vue2-datepicker' => '^3.10.3',
+        "@dcodegroup-au/sass-lib" => "^0.0.7",
+        "@dcodegroup-au/vue-datepicker" => "^0.0.4",
+        "@dcodegroup-au/vue-multiselect" => "0.0.4",
         '@dcodegroup-au/vuetable-3' => '^4.0.2',
         'v-click-outside' => '^3.1.2',
     ];
@@ -39,12 +39,12 @@ class DcodePreset extends Preset
         $filesystem->copyDirectory(__DIR__ . '/../stubs/default', base_path());
     }
     
-    public static function updateSass()
-    {
-        $filesystem = new Filesystem();
-        $filesystem->deleteDirectory(resource_path('sass/preset'));
-        $filesystem->copyDirectory(__DIR__ . '/../stubs/default/resources/sass/preset/', resource_path('sass/preset'));
-    }
+    // public static function updateSass()
+    // {
+    //     $filesystem = new Filesystem();
+    //     $filesystem->deleteDirectory(resource_path('sass/preset'));
+    //     $filesystem->copyDirectory(__DIR__ . '/../stubs/default/resources/sass/preset/', resource_path('sass/preset'));
+    // }
     // public static function installAuth()
     // {
     //     $filesystem = new Filesystem();

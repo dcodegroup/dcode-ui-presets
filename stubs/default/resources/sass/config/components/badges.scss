@@ -1,0 +1,10 @@
+@use 'dcode/sass-lib/sass/admin-features/mixins/badges.scss' as *;
+@use '../../config/variables.scss' as *;
+
+// to get the colour variations the bg-text-colors helper mixin needs to be added to the project
+.badge {
+    @include badges;
+    @if (mixin-exists('badge-settings')) {
+        @include badges-settings;
+    }
+}

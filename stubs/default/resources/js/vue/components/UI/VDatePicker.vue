@@ -35,7 +35,7 @@
             },
             format: {
                 type: String,
-                default: 'YYYY-MM-DD'
+                default: 'DD/MM/YYYY'
             },
         },
         data() {

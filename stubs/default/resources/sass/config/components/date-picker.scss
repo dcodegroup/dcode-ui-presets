@@ -1,0 +1,21 @@
+@use '../../config/palette.scss' as *;
+@use '../../config/variables.scss' as *;
+@use 'dcode/sass-lib/sass/admin-features/mixins/forms.scss'as *;
+
+$default-color: map-get($palette, "blackest");
+$primary-color: map-get($palette, "primary");
+
+@import '~vue2-datepicker/scss/index.scss';
+
+div.mx-datepicker {
+    width: 100%;
+    .mx-input-wrapper {
+        .mx-input {
+            @include input-common($input-border, $input-radius, $input-padding, $placeholder-color);
+            box-shadow: none;
+            color: map-get($palette, "blackest");
+            height: auto;
+            line-height: 1;
+        }
+    }
+}

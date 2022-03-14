@@ -1,6 +1,5 @@
 
-@use '../preset/' as *;
-
+@use 'dcode/sass-lib/sass/base.scss' as *;
 @use './palette.scss' as *;
 @use './fonts/inter.scss' as *;
 
@@ -36,7 +35,7 @@ $font-family: 'inter', sans-serif;
     @include heading-font-semi-bold;
     @include font-color;
     @include clamp(38, 59);
-    @include clamp(5, 9, 'letter-spacing');
+    // @include clamp(5, 9, 'letter-spacing');
     line-height: 1.2;
     @if ($with-margins) {
         margin: -5px 0 16px;
@@ -55,7 +54,7 @@ $font-family: 'inter', sans-serif;
     @include heading-font-regular;
     @include font-color;
     @include clamp(28, 33);
-    letter-spacing: 0.2em;
+    // letter-spacing: 0.2em;
     line-height: 1.3;
     @if ($with-margins) {
         margin: -3px 0 8px;
@@ -150,8 +149,13 @@ h6 {
         @include p-sml(true);
     }
 }
+small {
+    @include p-sml(true);
+    color: map-get($palette, 'dark-gray');
+}
+
 #{$text-els} {
-    @include text-alignments;
+    // @include text-alignments;
     em {
         font-style: normal;
         color: $text-2;
@@ -159,7 +163,7 @@ h6 {
 }
 a,
 button {
-    @include states($text-2, darken($text-2, 15%));
+    // @include states($text-2, darken($text-2, 15%));
 }
 
 dl {

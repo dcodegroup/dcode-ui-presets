@@ -1,0 +1,43 @@
+@use 'dcode/sass-lib/sass/admin-features/mixins/tables.scss' as *;
+@use '../../config/palette.scss' as *;
+@use '../../config/variables.scss'as *;
+
+table:not(.mx-table-date){
+    @include tables(
+        $table-bg, 
+        $table-border,
+        $palette,
+        $table-header-color
+    );
+    @if (mixin-exists('tables-settings')) {
+        @include table-settings;
+    }
+}
+
+// .financial-totals {
+//     display: flex;
+//     @include media-breakpoint-down('md') {
+//         flex-direction: column;
+//     }
+//     > div {
+//         &:first-child {
+//             width: calc((2 / 3) * 100%);
+//             @include media-breakpoint-down('md') {
+//                 margin: 2rem 0;
+//                 width: 100%;
+//             }
+//         }
+//         &:nth-child(2){
+//             width: calc(100 / 3) * 1%;
+//             @include media-breakpoint-down('md') {
+//                 width: 100%;
+//             }
+//             h2, h4 {
+//                 display: flex;
+//                 span {
+//                     width: 50%;
+//                 }
+//             }
+//         }
+//     }
+// }

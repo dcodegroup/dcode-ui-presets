@@ -1,0 +1,15 @@
+
+@use 'dcode/sass-lib/sass/admin-features/mixins/tabs.scss' as *;
+@use '../../config/variables.scss' as *;
+
+nav.tabs {
+    @include tabs(
+        $tab-color,
+        $active-tab-border-color,
+        $active-tab-color,
+        $tab-padding,
+        $tab-panel-padding);
+    @if (mixin-exists('tabs-settings')) {
+        @include tabs-settings;
+    }
+}

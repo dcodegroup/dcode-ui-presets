@@ -1,0 +1,10 @@
+@use 'dcode/sass-lib/sass/admin-features/mixins/cards.scss' as *;
+@use '../../config/variables.scss' as *;
+
+// Check this one on the stylguide again...
+.card {
+    @include cards($card-bg, $card-border-radius, $card-header-color, $card-header-f-size); //selected color param not set
+    @if (mixin-exists('card-settings')) {
+        @include card-settings;
+    }
+}

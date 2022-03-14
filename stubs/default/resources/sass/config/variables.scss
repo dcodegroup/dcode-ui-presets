@@ -17,6 +17,7 @@ $card-header-color: map-get($palette, "secondary");
 $card-header-f-size: 14px;
 
 //standard input settings
+$inputs: '[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='phone'], [type='color'], select, textarea';
 $input-border: 1px solid map-get($palette, 'blackest');
 $input-bg: #fff; 
 $input-radius: $radius;
@@ -62,12 +63,13 @@ $tag-radius: $radius;
 //tile settings
 $tile-color: map-get($palette, "light-gray");
 $tile-radius: $radius;
+$tile-padding: 2px 2px 2px 4px;
 
 //menus
 $menu-active-color: map-get($palette, "secondary");
 $menu-f-size: $clickable-f-size;
 $menu-f-weight: bold;
-$dd-text-align: center;
+$dd-text-align: left;
 $dd-items-padding: 0.5rem 0.75rem;
 $dd-width: 100px;
 
