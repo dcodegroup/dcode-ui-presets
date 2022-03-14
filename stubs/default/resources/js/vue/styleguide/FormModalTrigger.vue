@@ -40,7 +40,7 @@ export default {
         handleClick(){
             this.$root.$emit('openModal', {
                 componentName: "CreateUserModal",
-                componentData:  {
+                componentData: {
                     form: this.form,
                 }
             });

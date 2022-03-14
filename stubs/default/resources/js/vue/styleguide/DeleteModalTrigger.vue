@@ -20,10 +20,10 @@ export default {
                 },
             });
         },
-         doAction(){
+        doAction(){
             this.$root.$emit("closeModal");
             console.log("The delete action is now completed...")
-            return true;
+            return true
         }
     }
 }

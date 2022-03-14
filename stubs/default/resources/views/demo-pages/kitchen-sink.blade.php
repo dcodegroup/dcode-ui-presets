@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app', [
+    'bodyId' => 'demo-pages'
+])
  
 @section('content')
 <aside>
@@ -27,8 +29,7 @@
     </ul>
 </aside>
 <section>
-    <h3>Kitchen Sink</h3>
-    <hr>
+    <h2>Kitchen Sink</h2>
     <h3><a name="buttons">Buttons</a></h3>
     <p>Generic Buttons</p>
     <a href="#" class="button">Generic button</a>
@@ -161,7 +162,7 @@
     <hr>
     <div>
         <h3><a name="badges">Badges</a></h3>
-        <div class="cols-of-50">
+        <div class="cols-of-150">
             <div>
                 <div class="badge bg-primary"></div>
                 <p class="text-primary">badge bg-primary</p>
@@ -217,7 +218,7 @@
     </div>
     <hr>
     <div>
-        <h3><a name="checkbox-buttons">Checkbox Buttons test123</a></h3>
+        <h3><a name="checkbox-buttons">Checkbox Buttons</a></h3>
         <form action="#" method="post">
             <label for="option-one" class="checkbox-btn">
                 <input type="checkbox" id="option-one" />
@@ -235,15 +236,15 @@
         <h3><a name="checkbox-groups">Checkbox Button Groups</a></h3>
         <form action="#" method="post">
             <div class="btn-group">
-                <label for="option-one-a" class="checkbox-btn">
+                <label for="option-one-a" class="checkbox-btn mb-0">
                     <input type="checkbox" id="option-one-a" />
                     <span>Option 1</span>
                 </label>
-                <label for="option-two-a" class="checkbox-btn">
+                <label for="option-two-a" class="checkbox-btn mb-0">
                     <input type="checkbox" id="option-two-a" />
                     <span>Option 2</span>
                 </label>
-                <label for="option-three-a" class="checkbox-btn">
+                <label for="option-three-a" class="checkbox-btn mb-0">
                     <input type="checkbox" id="option-three-a" />
                     <span>Option 3</span>
                 </label>
@@ -374,7 +375,7 @@
     <div>
         <h3><a name="tables">Tables</a></h3>
         <br>
-        <div class="bg-whitest" style="padding: 1rem;">
+        <div>
             <p>Standard</p>
             <table>
                 <thead>
@@ -529,15 +530,15 @@
     <hr>
     <div>
         <h3><a name="tags">Tags</a></h3>
-        <div class="bg-whitest cols-of-50" style="padding: 1rem;">
+        <div class="cols-of-150">
             <div>
                 <div class="tag" id="genericTag">Generic tag</div>
             </div>
             <div>
-                <div class="tag bg-primary">tag bg-primary</div>
+                <div class="tag bg-primary text-whitest">tag bg-primary</div>
             </div>
             <div>
-                <div class="tag bg-secondary">tag bg-secondary</div>
+                <div class="tag bg-secondary text-whitest">tag bg-secondary</div>
             </div>
             <div>
                 <div class="tag bg-success">tag bg-success</div>
@@ -546,7 +547,7 @@
                 <div class="tag bg-warning">tag bg-warning</div>
             </div>
             <div>
-                <div class="tag bg-danger">tag bg-danger</div>
+                <div class="tag bg-danger text-whitest">tag bg-danger</div>
             </div>
         </div>
     </div>
@@ -556,10 +557,10 @@
         <div class="tile">
             <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptatum!</small>
         </div>
-        <div class="tile bg-primary">
+        <div class="tile bg-primary text-whitest">
             <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptatum!</small>
         </div>
-        <div class="tile bg-secondary">
+        <div class="tile bg-secondary text-whitest">
             <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet?</small>
         </div>
         <div class="tile bg-success">
@@ -568,7 +569,7 @@
         <div class="tile bg-warning">
             <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, iusto!</small>
         </div>
-        <div class="tile bg-danger">
+        <div class="tile bg-danger text-whitest">
             <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, quisquam.</small>
         </div>
     </div>
