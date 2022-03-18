@@ -2,7 +2,6 @@
 
 namespace Dcode\UiPresets;
 
-use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Ui\UiCommand;
 
