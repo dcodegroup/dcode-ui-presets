@@ -5,6 +5,7 @@ import BaseTable from "./vue/components/UI/BaseTable";
 import Modal from "./vue/components/UI/ModalWrapper.vue";
 import SidePanel from "./vue/components/UI/SidePanel.vue";
 import VTable from "./vue/components/UI/VTable.vue";
+import VSearch from "./vue/components/UI/VSearch.vue";
 import VDatePicker from "./vue/components/UI/VDatePicker.vue";
 import MultiselectWrapper from '@dcodegroup-au/vue-multiselect/MultiselectWrapper.vue';
 import DatepickerWrapper from '@dcodegroup-au/vue-datepicker/DatepickerWrapper.vue';
@@ -24,11 +25,11 @@ Vue.component("DeleteModal", DeleteModal);
 Vue.component("DeleteModalTrigger", DeleteModalTrigger);
 Vue.component("VDatePicker", VDatePicker);
 Vue.component("VTable", VTable);
+Vue.component("VSearch", VSearch);
 Vue.component("BaseTable", BaseTable);
 Vue.component("SidePanel", SidePanel);
 Vue.component("SidePanelJobCreate", SidePanelJobCreate);
 Vue.component("JobPanelTrigger", JobPanelTrigger);
-Vue.component('CodeBlock', CodeBlock);
 
 Vue.use(vClickOutside);
 new Vue({

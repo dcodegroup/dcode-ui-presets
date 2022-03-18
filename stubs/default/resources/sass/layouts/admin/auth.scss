@@ -18,12 +18,9 @@
   > main {
     h1 {
       margin-bottom: 2.5rem;
-      a {
-        @include align-justify-center-column;
-
-        span {
-            display: none;
-        }
+      text-align: center;
+      span {
+        display: none;
       }
     }
     > section {

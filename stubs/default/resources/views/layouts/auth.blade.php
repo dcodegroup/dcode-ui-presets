@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    @component('layout.partials.html-head')
+    @component('layouts.partials.html-head')
         @section('head-section')
             <meta name="csrf-token" content="{{ csrf_token() }}">
             <link href="{{ asset('css/app.css') }}" rel="stylesheet">

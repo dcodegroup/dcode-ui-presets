@@ -1,4 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.app', [
+    'bodyClass' => 'layout-admin'
+])
+@section('header')
+    @include('admin.sections.navigation')
+@endsection
 @section('content')
     <section>
         <header>

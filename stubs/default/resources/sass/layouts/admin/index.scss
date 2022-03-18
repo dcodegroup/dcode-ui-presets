@@ -69,9 +69,6 @@ html {
                         @include cards($card-bg, $card-border-radius, $card-header-color, $card-header-f-size);
                         padding: 1.25rem 1.5rem;
                         margin-bottom: 2rem;
-                        &:last-of-type {
-                            margin-bottom: 0;
-                        }
                     }
                     > fieldset > div,
                     > div {
@@ -88,6 +85,12 @@ html {
                         > small {
                             grid-column-start: 2;
                             grid-column-end: 3;
+                        }
+                    }
+                    footer {
+                        .button {
+                            min-width: 140px;
+                            text-align: center;
                         }
                     }
                 }

@@ -19,7 +19,7 @@
                 <input
                   type="hidden"
                   name="_token"
-                  :value="$root._data.csrf"
+                  :value="$root.csrf_token"
                 >
                 <input
                   type="hidden"

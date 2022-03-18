@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="vtable-w-pagination">
     <vuetable
       ref="vuetable"
       :api-url="getUrl"
       :fields="fields"
-      pagination-path=""
+      pagination-path="meta"
       :multi-sort="true"
       :append-params="filters"
       :sort-params="getSortParam"
@@ -37,7 +37,6 @@ export default {
     components: {
         Vuetable,
         VuetablePagination,
-         // VuetablePaginationInfo,
      },
     props: {
         getUrl: {
