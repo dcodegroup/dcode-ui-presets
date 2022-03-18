@@ -1,6 +1,6 @@
 {
     "name": "dcodegroup/ui-presets",
-    "description": "DCODE preset for Laravel.",
+    "description": "DCODE FrontEnd preset for Laravel.",
     "keywords": [
         "dcode",
         "laravel",

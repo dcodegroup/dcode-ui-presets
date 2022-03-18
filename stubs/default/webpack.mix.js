@@ -11,7 +11,9 @@ const path = require("path");
  |
  */
 
-mix.js("resources/js/app.js", "public/js/app.js")
+mix
+  .js("resources/js/app.js", "public/js/app.js")
+  .js("resources/js/auth.js", "public/js/auth.js")
     .copy([
         "resources/sass/config/fonts/inter",
         "resources/sass/config/fonts/menlo",

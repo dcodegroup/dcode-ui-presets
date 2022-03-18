@@ -1,2 +1,4 @@
 @use './config/components';
-@use 'page-layouts/app';
+@use 'layouts/demo-pages';
+@use 'layouts/admin';
+@use 'layouts/admin/auth.scss';

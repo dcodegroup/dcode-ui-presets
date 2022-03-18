@@ -24,10 +24,9 @@
 export default {
     data(){
         return {
-            // Why do we need to pass the fields in if this component has a single use
             form: new Form(
                 {
-                    ...this.$attrs.form.fieldValues, // formValues should be props
+                    ...this.$attrs.form.fieldValues,
                 },
                 {
                     _method: this.$attrs.form.method,
@@ -38,13 +37,13 @@ export default {
     },
     methods: {
         handleSubmit(){
-             this.form.post('user/save')
+             this.form.post('user/save')  
             .then(resp => {
                 console.log(resp);
                 this.$emit('closeModal')
             })
             .catch(err => {
-                console.error(err)
+                console.error(err) 
             });
         },
     }

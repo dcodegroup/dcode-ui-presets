@@ -39,18 +39,6 @@ class DcodePreset extends Preset
         $filesystem->copyDirectory(__DIR__ . '/../stubs/default', base_path());
     }
     
-    // public static function updateSass()
-    // {
-    //     $filesystem = new Filesystem();
-    //     $filesystem->deleteDirectory(resource_path('sass/preset'));
-    //     $filesystem->copyDirectory(__DIR__ . '/../stubs/default/resources/sass/preset/', resource_path('sass/preset'));
-    // }
-    // public static function installAuth()
-    // {
-    //     $filesystem = new Filesystem();
-    //     $filesystem->copyDirectory(__DIR__ . '/../stubs/auth', base_path());
-    // }
-
     protected static function updatePackageArray(array $packages)
     {
         return array_merge(

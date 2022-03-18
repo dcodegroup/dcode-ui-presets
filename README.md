@@ -1,11 +1,10 @@
-## Running Preset
-To build the preset boilerplate, run the following command:
-```php artisan ui dcode-preset-ui```
+## Installing the FrontEnd Preset
+To include the Front End files run the following command:
+```php artisan ui dcode-preset-ui``` 
 
-<!-- 
-N/A with sass-lib now
-## Updating Sass
-To update the base and component sass directories, run the following command:
-```php artisan ui dcode-preset-sass``` -->
-
- 
+This command will:
+- overwrite existing auth blades,
+- include admin layouts for user list and edit,
+- add a kitchen sink layout presenting all the components we use,
+- provide the sass settings to use the sass-lib package,
+- and import the standard vue components used for our projects.

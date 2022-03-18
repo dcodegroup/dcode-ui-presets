@@ -1,5 +1,5 @@
 <template>
-    <button class="button -hollow" @click="handleCreateJob()">Create New Job</button>
+    <button class="button -hollow" @click="handleCreateJob()">Create New Job</button>    
 </template>
 
 <script>

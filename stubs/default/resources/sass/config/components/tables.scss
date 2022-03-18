@@ -9,9 +9,6 @@ table:not(.mx-table-date){
         $palette,
         $table-header-color
     );
-    @if (mixin-exists('tables-settings')) {
-        @include table-settings;
-    }
 }
 
 // .financial-totals {
