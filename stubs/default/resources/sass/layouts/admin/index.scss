@@ -1,0 +1,97 @@
+@use 'dcode/sass-lib/sass/layouts.scss' as *;
+@use 'dcode/sass-lib/sass/admin-features/helpers.scss' as *;
+@use 'dcode/sass-lib/sass/admin-features/mixins/cards.scss' as *;
+@use 'dcode/sass-lib/sass/layouts.scss' as *;
+
+@use '~/sass/config/variables.scss' as *;
+@use '~/sass/config/palette.scss' as *;
+@use '~/sass/config/typography.scss' as *;
+@use '~/sass/config/mixins.scss' as *;
+
+html {
+    scroll-behavior: smooth;
+}
+
+.layout-admin {
+    @include bg-text-colors($palette);
+    margin: 0;
+    #app {
+        > header {
+          background-color: map-get($palette, 'light-gray');
+          padding: 1rem 0;
+          > div {
+            @include space-between-center;
+            margin: auto;
+            max-width: $body-max-width;
+            h1 {
+                margin:0;
+                a {
+                    display: flex;
+                    span {
+                        display: none;
+                    }
+                }
+            }
+          }
+        }
+        > main {
+            background-color: map-get($palette, 'off-white');
+            min-height: 100vh;
+            > section {
+                margin: auto;
+                max-width: $body-max-width;
+                width: 100%;
+                padding: 40px 0;
+                > header {
+                    @include space-between-center;
+                    margin-bottom: 2rem;
+                    padding: 1rem 0;
+                    h2 {
+                        line-height: 1;
+                        margin: 0;
+                    }
+                    > div {
+                        align-items: flex-end;
+                        display: flex;
+                        gap: 1rem;
+                        .search-input {
+                            margin: 0;
+                            input {
+                                border: none;
+                                padding: 0.6rem;
+                            }
+                        }
+                    }
+                }
+                > form {
+                    max-width: 50%;
+                    > fieldset {
+                        @include cards($card-bg, $card-border-radius, $card-header-color, $card-header-f-size);
+                        padding: 1.25rem 1.5rem;
+                        margin-bottom: 2rem;
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+                    }
+                    > fieldset > div,
+                    > div {
+                        display: grid;
+                        grid-template-columns: 200px 1fr;
+                        grid-gap: .5rem;
+                        .stretch {
+                            grid-column: 1 / span 2;
+                        }
+                        > label {
+                            color: map-get($palette, 'dark-gray');
+                            margin: .75rem 0 0;
+                        }
+                        > small {
+                            grid-column-start: 2;
+                            grid-column-end: 3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,183 @@
+@use 'dcode/sass-lib/sass/layouts.scss' as *;
+
+@use '../palette.scss'as *;
+@use '../mixins.scss'as *;
+@use '../variables.scss'as *;
+
+.vtable-w-pagination {
+    padding-bottom: 3rem;
+    .vuetable {
+        thead {
+            th {
+                &.sortable {
+                    &:hover {
+                        color: map-get($palette, 'tertiary');
+                    }
+                    .sort-icon {
+                        // float: none !important;
+                        font-style: normal;
+                        margin-left: .5rem;
+                        &:after {
+                          content: url('/imgs/icons/sort.svg');
+                          display: block;
+                          opacity: .5;
+                          width: 10px;
+                        }
+                        &.chevron.up {
+                          &:after {
+                              content: url('/imgs/icons/sort-up.svg');
+                              display: block;
+                              opacity: .5;
+                              width: 10px;
+                          }
+                        }
+                        &.chevron.down {
+                          &:after {
+                              content: url('/imgs/icons/sort-down.svg');
+                              display: block;
+                              opacity: .5;
+                              width: 10px;
+                          }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .ui.pagination.menu {
+        margin: 0;
+        display: inline-flex;
+        vertical-align: middle;
+        margin: 2rem 0;
+        margin: 1rem 0;
+        background: $white;
+        font-weight: 400;
+        border: none;
+        border-radius: 6px;
+        min-height: 1.25rem;
+        .item:last-child {
+            border-radius: 0 6px 6px 0
+        }
+        .item:last-child:before {
+            display: none
+        }
+        .item {
+            min-width: 3em;
+            text-align: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            vertical-align: middle;
+            line-height: 1;
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
+            flex: 0 0 auto;
+            font-size: 13px;
+            user-select: none;
+            background: 0 0;
+            padding: .5rem;
+            text-transform: none;
+            color: rgba(87, 87, 87, 0.87);
+            font-weight: 400;
+            transition: background .1s ease,color .1s ease;
+            &:first-child {
+                border-radius: 6px 0 0 6px
+            }
+            &::before {
+                position: absolute;
+                content: '';
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 1px;
+                background: rgba(34,36,38,.1)
+            }
+        
+        }
+        .icon.item i.icon {
+            vertical-align: top
+        }
+        .active.item {
+          cursor: not-allowed!important;
+          border-top: none;
+          background-color: rgba(0,0,0,.05);
+          color: rgba(0,0,0,.95);
+          box-shadow: none
+        }
+        .item.disabled,
+        .item.disabled:hover {
+            cursor: not-allowed!important;
+            background-color: transparent!important;
+            color: rgba(40,40,40,.3)!important
+        }
+        i.disabled.icon {
+            opacity: .45!important
+        }
+        i.icon.hover {
+            opacity: 1!important
+        }
+        i.icon.active {
+            opacity: 1!important
+        }
+        i.icon {
+            display: inline-block;
+            width: 1.18em;
+            font-style: normal;
+            text-decoration: inherit;
+            text-align: center;
+            speak: none;
+            font-smoothing: antialiased;
+            backface-visibility: hidden;
+            opacity: .9;
+            float: none;
+            margin: 0 ;
+            &::before {
+                background: 0 0!important
+            }
+        }
+        .item .icon::after {
+            font-size: 14px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        .item .left.double.icon::after{
+          content: url('/imgs/icons/chevron-double-left.svg');
+          display: block;
+          opacity: .5;
+          width: 7px;
+        }
+        .item .left.chevron.icon::after {
+          content: url('/imgs/icons/chevron-left.svg');
+          display: block;
+          opacity: .5;
+          width: 5px;
+        }
+        .item .right.double.icon::after {
+          content: url('/imgs/icons/chevron-double-right.svg');
+          display: block;
+          opacity: .5;
+          width: 7px;
+        }
+        .item .right.chevron.icon::after {
+          content: url('/imgs/icons/chevron-right.svg');
+          display: block;
+          opacity: .5;
+          width: 5px;
+        }
+        &:after {
+            content: '';
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden
+        }
+        &:first-child {
+            margin-top: 0
+        }
+        &:last-child {
+            margin-bottom: 0
+        }
+    }
+}

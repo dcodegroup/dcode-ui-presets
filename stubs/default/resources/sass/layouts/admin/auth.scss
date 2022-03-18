@@ -1,0 +1,44 @@
+@use 'dcode/sass-lib/sass/layouts.scss' as *;
+@use 'dcode/sass-lib/sass/admin-features/helpers.scss' as *;
+@use 'dcode/sass-lib/sass/admin-features/mixins/cards.scss' as *;
+@use 'dcode/sass-lib/sass/layouts.scss' as *;
+
+@use '~/sass/config/variables.scss' as *;
+@use '~/sass/config/palette.scss' as *;
+@use '~/sass/config/typography.scss' as *;
+@use '~/sass/config/mixins.scss' as *;
+
+.layout-auth {
+  @include bg-text-colors($palette);
+  @include align-justify-center-column;
+  background-color: map-get($palette, 'off-white');
+  margin: 0;
+  height: 100vh;
+
+  > main {
+    h1 {
+      margin-bottom: 2.5rem;
+      a {
+        @include align-justify-center-column;
+
+        span {
+            display: none;
+        }
+      }
+    }
+    > section {
+      width: 450px;
+      p {
+        font-weight: 300;
+        margin-bottom: 1rem;
+      }
+      form {
+        fieldset {
+          @include cards($card-bg, $card-border-radius, $card-header-color, $card-header-f-size);
+          padding: 1.25rem 1.5rem;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}

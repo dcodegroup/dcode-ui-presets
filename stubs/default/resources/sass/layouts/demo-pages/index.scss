@@ -1,0 +1,117 @@
+@use 'dcode/sass-lib/sass/layouts.scss' as *;
+@use 'dcode/sass-lib/sass/admin-features/helpers.scss' as *;
+@use 'dcode/sass-lib/sass/layouts.scss' as *;
+
+@use '~/sass/config/variables.scss' as *;
+@use '~/sass/config/palette.scss' as *;
+@use '~/sass/config/typography.scss' as *;
+@use '~/sass/config/mixins.scss' as *;
+
+html {
+    scroll-behavior: smooth;
+}
+
+#demo-pages {
+    @include bg-text-colors($palette);
+    margin: 0;
+
+    .cols-of-150 {
+        @include cols-of(150px, 1000px, 1rem);
+    }
+    .colour-block {
+        border: 1px solid map-get($palette, "dark-grey");
+        padding: 1rem;
+        > div {
+            min-height: 100px;
+            margin-bottom: 1rem;
+        }
+    }
+    h2 {
+        margin-bottom: 2rem;
+    }
+    h3 {
+        margin-bottom: 1rem;
+    }
+    hr {
+        border: none;
+        background-color: $sidebar-menu-color;
+        height: 1px;
+        margin: 60px 0;
+    }
+    .mb-0 {
+        margin-bottom: 0;
+    }
+    #app {
+        > main {
+            display: flex;
+            align-items: flex-start;
+            background-color: map-get($palette, 'off-white');
+            > aside {
+                @include aside-menu;
+                background-color: $sidebar-bg;
+                padding-left: 20px;
+                padding-top: 40px;
+                height: 100vh;
+                width: 300px;
+                ul {
+                    position: fixed;
+                }
+            }
+            > section{
+                max-width: 1100px;
+                width: 100%;
+                padding: 40px;
+                > header {
+                    padding: 1rem 0;
+                    > div {
+                        @include space-between-center;
+                        margin: auto;
+                        max-width: $body-max-width;
+                        h1 {
+                            margin:0;
+                            span {
+                                display: none;
+                            }
+                        }
+                        nav ul li a {
+                            color: map-get($palette, 'tertiary');
+                        }
+                    }
+                }
+                > main {
+                    min-height: 100vh;
+                    padding: 1rem 0;
+                    > div {
+                        margin: auto;
+                        max-width: $body-max-width;
+                        header.refine {
+                            @include space-between-center;
+                            margin-bottom: 2rem;
+                            .form  {
+                                @include space-between;
+                                > * {
+                                    margin-right: .5rem;
+                                }
+                                .checkbox-btn span {
+                                    padding: 0.65rem 1rem;
+                                }
+                                .checkbox-btn,
+                                p {
+                                    margin-bottom: 0;
+                                }
+                                &:first-of-type {
+                                    > div {
+                                        margin-right: 2rem;
+                                    }
+                                }
+                                .select-filter-input p {
+                                    background-color: map-get($palette, "whitest");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
