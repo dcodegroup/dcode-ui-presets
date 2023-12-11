@@ -17,9 +17,9 @@ class DcodePreset extends Preset
         'vue-loader' => '^15.9.6',
         'vue-template-compiler' => '^2.6',
         'vue' => '^2.6',
-        "@dcodegroup-au/sass-lib" => "^0.0.7",
-        "@dcodegroup-au/vue-datepicker" => "^0.0.4",
-        "@dcodegroup-au/vue-multiselect" => "0.0.4",
+        '@dcodegroup-au/sass-lib' => '^0.0.7',
+        '@dcodegroup-au/vue-datepicker' => '^0.0.4',
+        '@dcodegroup-au/vue-multiselect' => '0.0.4',
         '@dcodegroup-au/vuetable-3' => '^4.0.2',
         'v-click-outside' => '^3.1.2',
     ];
@@ -36,9 +36,9 @@ class DcodePreset extends Preset
         $filesystem->deleteDirectory(resource_path('css'));
         $filesystem->deleteDirectory(resource_path('sass'));
         $filesystem->deleteDirectory(resource_path('js'));
-        $filesystem->copyDirectory(__DIR__ . '/../stubs/default', base_path());
+        $filesystem->copyDirectory(__DIR__.'/../stubs/default', base_path());
     }
-    
+
     protected static function updatePackageArray(array $packages)
     {
         return array_merge(

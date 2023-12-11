@@ -13,8 +13,8 @@
         }
     ],
     "require": {
-        "laravel/ui": "^3.0",
-        "illuminate/support": "^7.0|^8.0|^9.0"
+        "laravel/ui": "^3.0|^4.0",
+        "illuminate/support": "^7.0|^8.0|^9.0|^10.0"
     },
     "autoload": {
         "psr-4": {
@@ -30,6 +30,9 @@
             ]
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require-dev": {
+        "laravel/pint": "^1.13"
+    }
 }
